@@ -1,6 +1,7 @@
 # AutoQuest
-Small addons that will take most of your quests and validate them without going through the user interface.
 ![alt text](https://github.com/unverz06/AutoQuest/blob/master/AutoQuest_logo.jpg?raw=true)
+
+Small addons that will take most of your quests and validate them without going through the user interface.
 
 Use cases :
 - Taking single quests
