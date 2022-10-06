@@ -1,18 +1,18 @@
-# AutoQuest
+# AutoQuest — V1.0.1
 <div align="center">
   <img src="src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>
 
 Small addons that will take most of your quests and validate them without going through the user interface.
 
-Use cases :
+## Use cases :
 - Taking single quests
 - Taking multiple quests
 - Taking a quest in a chat window with an NPC
 - Return quests
 - Return quests with the continue
 
-# Function used
+## Function used
 - C_GossipInfo.GetNumAvailableQuests()
 - C_GossipInfo.GetNumActiveQuests()
 - C_GossipInfo.SelectAvailableQuest()
@@ -23,5 +23,5 @@ Use cases :
 - CompleteQuest()
 - GetQuestReward()
 
-# API Base 
+## API Base 
 https://wowpedia.fandom.com/wiki/World_of_Warcraft_API
