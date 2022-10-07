@@ -30,15 +30,15 @@ Small addons that will take most of your quests and validate them without going 
 - Return quests with the continue
 
 ## Function used
-- C_GossipInfo.GetNumAvailableQuests()
-- C_GossipInfo.GetNumActiveQuests()
-- C_GossipInfo.SelectAvailableQuest()
-- C_GossipInfo.SelectActiveQuest()
-- GetNumAvailableQuests()[](https://wowpedia.fandom.com/wiki/World_of_Warcraft%3A_Classic)
-- SelectAvailableQuest()
-- AcceptQuest()
-- CompleteQuest()
-- GetQuestReward()
+C_GossipInfo.GetNumAvailableQuests()
+C_GossipInfo.GetNumActiveQuests()
+C_GossipInfo.SelectAvailableQuest()
+C_GossipInfo.SelectActiveQuest()
+GetNumAvailableQuests()
+SelectAvailableQuest()
+AcceptQuest()
+CompleteQuest()
+GetQuestReward()
 
 ## API Base 
 https://wowpedia.fandom.com/wiki/World_of_Warcraft_API
