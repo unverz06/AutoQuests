@@ -3,8 +3,8 @@
   <img src="src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>
 
-Small addons that will take most of your quests and validate them without going through the user interface.<br>
-[![Available for](src/Shadowlands-Icon-Inline.webp)]()
+Small addons that will take most of your quests and validate them without going through the user interface.<br><br>
+Available for : [(src/Shadowlands-Icon-Inline.webp)(src/Shadowlands-Icon-Inline.webp)(src/Shadowlands-Icon-Inline.webp)]
 
 ## Use cases :
 - Taking single quests
