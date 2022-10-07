@@ -16,15 +16,39 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
   if (event=="GOSSIP_SHOW") then
     local npcGossipQuestAvailableCount = C_GossipInfo.GetNumAvailableQuests()
     local npcGossipQuestCompleteCount = C_GossipInfo.GetNumActiveQuests()
-    C_GossipInfo.SelectAvailableQuest(npcGossipQuestAvailableCount)
-    C_GossipInfo.SelectActiveQuest(npcGossipQuestCompleteCount)
+
+    -- message("Available:" .. npcGossipQuestAvailableCount .. ". Complete: " .. npcGossipQuestCompleteCount ..".") -- DEBUG
+
+    if (npcGossipQuestAvailableCount > 0) then
+      for i = 1, C_GossipInfo.GetNumAvailableQuests() do
+        C_GossipInfo.SelectAvailableQuest(i)
+      end
+    end
+    if (npcGossipQuestCompleteCount > 0) then
+      for i = 1, C_GossipInfo.GetNumActiveQuests() do
+        C_GossipInfo.SelectActiveQuest(i)
+      end
+    end
 	end
     --[[
     Start Event QUEST_*
   ]]
   if (event=="QUEST_GREETING") then
-    local npcQuestCount = GetNumAvailableQuests()
-    SelectAvailableQuest(npcQuestCount)
+    local npcAvailableQuestCount = GetNumAvailableQuests()
+    local npcActiveQuestCount = GetNumActiveQuests()
+
+    -- message("Available:" .. npcAvailableQuestCount .. ". Active: " .. npcActiveQuestCount ..".") -- DEBUG
+
+    if (npcAvailableQuestCount > 0) then
+      for i = 1, GetNumAvailableQuests() do
+        SelectAvailableQuest(i)
+      end
+    end
+    if (npcActiveQuestCount > 0) then
+      for i = 1, GetNumActiveQuests() do
+        SelectActiveQuest(i)
+      end
+    end
 	end
 
   if (event=="QUEST_DETAIL") then
@@ -36,7 +60,16 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
 	end
 
   if (event=="QUEST_COMPLETE") then
-    GetQuestReward(1)
+    local npcQuestRewardsCount = GetNumQuestRewards()
+
+    -- message("Reward count:" .. npcQuestRewardsCount .. ".") -- DEBUG
+
+    if (npcQuestRewardsCount > 0) then
+      for i = 1, GetNumQuestRewards() do
+        GetQuestReward(i)
+      end
+    end
+    GetQuestReward()
   end
 
   if (event=="QUEST_AUTOCOMPLETE") then
@@ -44,11 +77,3 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
 	end
 
 end)
-
-
-
--- /run AcceptQuest() -- prend la quest
--- /run CompleteQuest() -- continue la quest 
--- /run GetQuestReward() -- fin de quest
--- /run CloseQuest() -- ferme ta quest
-
