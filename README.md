@@ -4,7 +4,10 @@
 </div>
 
 Small addons that will take most of your quests and validate them without going through the user interface.<br><br>
-Available for : ![Shadowlands](src/Shadowlands.webp)![Wrath](src/Wrath.webp)![Shadowlands](src/WoW.webp)
+Available for :<br>
+![Shadowlands](src/Shadowlands.webp)<br>
+![Wrath](src/Wrath.webp)<br>
+![Shadowlands](src/WoW.webp)<br>
 
 ## Use cases :
 - Taking single quests
