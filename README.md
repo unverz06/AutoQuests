@@ -1,4 +1,4 @@
-# AutoQuest — V1.0.1
+# AutoQuest — V1.0.2
 <div align="center">
   <img src="src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>
@@ -36,9 +36,12 @@ C_GossipInfo.GetNumActiveQuests()
 C_GossipInfo.SelectAvailableQuest()
 C_GossipInfo.SelectActiveQuest()
 GetNumAvailableQuests()
+GetNumActiveQuests()
 SelectAvailableQuest()
+SelectActiveQuest()
 AcceptQuest()
 CompleteQuest()
+GetNumQuestRewards()
 GetQuestReward()
 ```
 

@@ -2,6 +2,6 @@
 ## Title: AutoQuest
 ## Notes: Takes and returns your quests automatically.
 ## Author: Thomas C. (unverz06)
-## Version: 1.0
+## Version: 1.0.2
 
 autoQuest.lua
