@@ -6,18 +6,17 @@
 Small addons that will take most of your quests and validate them without going through the user interface.<br><br>
 
 ## Compatibility :
-### In progress
+> In progress
 <div align="left">
-  ### In progress
   <img src="src/Dragonflight.png" alt="logo SL" width="20%">
 </div>
 
-### Retail
+> Retail
 <div align="left">
   <img src="src/Shadowlands.png" alt="logo SL" width="20%">
 </div>
 
-### Classic
+> Classic
 <div align="left">
   <img src="src/Wrath.png" alt="logo Wotlk" width="20%">
   <img src="src/WoW.png" alt="logo Vanilla" width="20%">
