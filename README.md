@@ -4,7 +4,7 @@
 </div>
 
 Small addons that will take most of your quests and validate them without going through the user interface.<br><br>
-Available for : [Shadowlands](src/Shadowlands-Icon-Inline.webp)
+Available for : __[Shadowlands](src/Shadowlands-Icon-Inline.webp)__
 
 ## Use cases :
 - Taking single quests
