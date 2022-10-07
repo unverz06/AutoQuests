@@ -4,7 +4,6 @@
 </div>
 
 Small addons that will take most of your quests and validate them without going through the user interface.<br><br>
-Available for :<br>
 ![Shadowlands](src/Shadowlands.webp)<br>
 ![Wrath](src/Wrath.webp)<br>
 ![Shadowlands](src/WoW.webp)<br>
@@ -21,7 +20,7 @@ Available for :<br>
 - C_GossipInfo.GetNumActiveQuests()
 - C_GossipInfo.SelectAvailableQuest()
 - C_GossipInfo.SelectActiveQuest()
-- GetNumAvailableQuests()
+- GetNumAvailableQuests()[](https://wowpedia.fandom.com/wiki/World_of_Warcraft%3A_Classic)
 - SelectAvailableQuest()
 - AcceptQuest()
 - CompleteQuest()
