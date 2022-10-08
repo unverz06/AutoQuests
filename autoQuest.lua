@@ -1,3 +1,5 @@
+local default = 0;
+
 AQ_EventFrame = CreateFrame("Frame")
 
 AQ_EventFrame:RegisterEvent ("GOSSIP_SHOW")
@@ -69,7 +71,7 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
         GetQuestReward(i)
       end
     end
-    GetQuestReward()
+    GetQuestReward(default)
   end
 
   if (event=="QUEST_AUTOCOMPLETE") then
