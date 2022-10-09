@@ -1,4 +1,4 @@
-local default = 0;
+local default = 1;
 
 AQ_EventFrame = CreateFrame("Frame")
 
@@ -66,7 +66,7 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
 
     -- message("Reward count:" .. npcQuestRewardsCount .. ".") -- DEBUG
 
-    if (npcQuestRewardsCount > 0) then
+    if (npcQuestRewardsCount > 1) then
       for i = 1, GetNumQuestRewards() do
         GetQuestReward(i)
       end
