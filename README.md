@@ -1,4 +1,4 @@
-# AutoQuest — V1.0.2
+# AutoQuest — V1.0.3
 <div align="center">
   <img src="src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>
@@ -26,7 +26,8 @@ Small addons that will take most of your quests and validate them without going 
 - Taking single quests
 - Taking multiple quests
 - Taking a quest in a chat window with an NPC
-- Return quests
+- Return single quests
+- Return multiple quests
 - Return quests with the continue
 
 ## Function used
