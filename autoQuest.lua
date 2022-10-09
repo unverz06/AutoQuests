@@ -6,10 +6,7 @@ AQ_EventFrame:RegisterEvent ("GOSSIP_SHOW")
 AQ_EventFrame:RegisterEvent ("QUEST_PROGRESS")
 AQ_EventFrame:RegisterEvent ("QUEST_DETAIL")
 AQ_EventFrame:RegisterEvent ("QUEST_COMPLETE")
-AQ_EventFrame:RegisterEvent ("QUEST_FINISHED")
 AQ_EventFrame:RegisterEvent ("QUEST_GREETING")
-AQ_EventFrame:RegisterEvent ("ITEM_PUSH")
-AQ_EventFrame:RegisterEvent ("QUEST_AUTOCOMPLETE")
 
 AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
   --[[
@@ -73,9 +70,5 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
     end
     GetQuestReward(default)
   end
-
-  if (event=="QUEST_AUTOCOMPLETE") then
-    message("quest auto complete are not available at the moment :(")
-	end
 
 end)
