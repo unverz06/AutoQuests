@@ -1,7 +1,7 @@
 ## Interface: 90207
 ## Title: AutoQuest
 ## Notes: Takes and returns your quests automatically.
-## Author: Thomas C. (unverz06)
-## Version: 1.0.5-rc1
+## Author: Unverz06
+## Version: 1.0.5
 
 autoQuest.lua
