@@ -69,6 +69,7 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
       PlaySound(5274, "master")
     end
     GetQuestReward(default)
+    CloseQuest()
   end
 
 end)
