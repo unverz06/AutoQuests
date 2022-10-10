@@ -17,14 +17,13 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
     local npcGossipQuestAvailableCount = C_GossipInfo.GetNumAvailableQuests()
     local npcGossipQuestCompleteCount = C_GossipInfo.GetNumActiveQuests()
 
-    -- message("Available:" .. npcGossipQuestAvailableCount .. ". Complete: " .. npcGossipQuestCompleteCount ..".") -- DEBUG
+    -- print("Available: " .. npcGossipQuestAvailableCount .. ". In progress: " .. npcGossipQuestCompleteCount ..".") -- DEBUG
 
     if (npcGossipQuestAvailableCount > 0) then
       for i = 1, C_GossipInfo.GetNumAvailableQuests() do
         C_GossipInfo.SelectAvailableQuest(i)
       end
-    end
-    if (npcGossipQuestCompleteCount > 0) then
+    elseif (npcGossipQuestCompleteCount > 0) then
       for i = 1, C_GossipInfo.GetNumActiveQuests() do
         C_GossipInfo.SelectActiveQuest(i)
       end
@@ -37,14 +36,13 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
     local npcAvailableQuestCount = GetNumAvailableQuests()
     local npcActiveQuestCount = GetNumActiveQuests()
 
-    -- message("Available:" .. npcAvailableQuestCount .. ". Active: " .. npcActiveQuestCount ..".") -- DEBUG
+    -- print("Available: " .. npcAvailableQuestCount .. ". In progress: " .. npcActiveQuestCount ..".") -- DEBUG
 
     if (npcAvailableQuestCount > 0) then
       for i = 1, GetNumAvailableQuests() do
         SelectAvailableQuest(i)
       end
-    end
-    if (npcActiveQuestCount > 0) then
+    elseif (npcActiveQuestCount > 0) then
       for i = 1, GetNumActiveQuests() do
         SelectActiveQuest(i)
       end
@@ -62,9 +60,9 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
   if (event=="QUEST_COMPLETE") then
     local npcQuestRewardsCount = GetNumQuestRewards()
 
-    -- message("Reward count:" .. npcQuestRewardsCount .. ".") -- DEBUG
+    -- print("Reward count: " .. npcQuestRewardsCount .. ".") -- DEBUG
 
-    if (npcQuestRewardsCount > 1) then
+    if (npcQuestRewardsCount > 0) then
       print(msgReward)
       PlaySound(5274, "master")
     else
