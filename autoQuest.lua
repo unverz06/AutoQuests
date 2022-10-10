@@ -1,4 +1,5 @@
 local default = 1;
+local msgReward = "AutoQuest Alert — Choose your reward !"
 
 AQ_EventFrame = CreateFrame("Frame")
 
@@ -28,7 +29,7 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
         C_GossipInfo.SelectActiveQuest(i)
       end
     end
-	end
+  end
     --[[
     Start Event QUEST_*
   ]]
@@ -48,15 +49,15 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
         SelectActiveQuest(i)
       end
     end
-	end
+  end
 
   if (event=="QUEST_DETAIL") then
     AcceptQuest()
-	end
+  end
 
   if (event=="QUEST_PROGRESS") then
     CompleteQuest()
-	end
+  end
 
   if (event=="QUEST_COMPLETE") then
     local npcQuestRewardsCount = GetNumQuestRewards()
@@ -64,12 +65,10 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
     -- message("Reward count:" .. npcQuestRewardsCount .. ".") -- DEBUG
 
     if (npcQuestRewardsCount > 1) then
-      for i = 1, GetNumQuestRewards() do
-        GetQuestReward(i)
-      end
+      print(msgReward)
+      PlaySound(5274, "master")
     end
     GetQuestReward(default)
-    CloseQuest()
   end
 
 end)

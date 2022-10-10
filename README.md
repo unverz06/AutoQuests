@@ -44,6 +44,8 @@ AcceptQuest()
 CompleteQuest()
 GetNumQuestRewards()
 GetQuestReward()
+CloseQuest()
+PlaySound()
 ```
 
 ## API Base 
