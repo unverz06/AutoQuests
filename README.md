@@ -1,4 +1,4 @@
-# AutoQuest — V1.0.3
+# AutoQuest — V1.0.4
 <div align="center">
   <img src="src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>
