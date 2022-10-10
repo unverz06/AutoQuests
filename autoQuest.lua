@@ -67,8 +67,9 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
     if (npcQuestRewardsCount > 1) then
       print(msgReward)
       PlaySound(5274, "master")
+    else
+      GetQuestReward(default)
     end
-    GetQuestReward(default)
     CloseQuest()
   end
 
