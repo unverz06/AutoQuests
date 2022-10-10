@@ -69,6 +69,7 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
       end
     end
     GetQuestReward(default)
+    CloseQuest()
   end
 
 end)
