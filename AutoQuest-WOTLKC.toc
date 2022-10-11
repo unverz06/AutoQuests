@@ -1,7 +1,0 @@
-## Interface: 30400
-## Title: AutoQuest
-## Notes: Takes and returns your quests automatically.
-## Author: Unverz06
-## Version: 1.0.6.3
-
-autoQuest.lua

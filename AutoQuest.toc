@@ -1,7 +1,10 @@
 ## Interface: 90207
+## Interface-Classic: 11403
+## Interface-WOTLKC: 30400
 ## Title: AutoQuest
 ## Notes: Takes and returns your quests automatically.
 ## Author: Unverz06
-## Version: 1.0.6.3
+## Version: 1.0.7
+## X-Curse-Project-ID: 686482
 
 autoQuest.lua
