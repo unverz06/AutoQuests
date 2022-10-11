@@ -1,5 +1,2 @@
 # ignore all src folder
 src/
-
-# ignore DragonFlight
-release-AutoQuest-Mainline.toc
