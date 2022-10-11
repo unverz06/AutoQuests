@@ -1,4 +1,4 @@
-# AutoQuest — V1.0.5
+# AutoQuest — V1.0.6
 <div align="center">
   <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>
