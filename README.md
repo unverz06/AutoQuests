@@ -1,6 +1,6 @@
-# AutoQuest — V1.0.5
+# AutoQuest — V1.0.6
 <div align="center">
-  <img src="src/AutoQuest_banner.jpg" alt="banner" width="100%">
+  <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>
 
 Small addons that will take most of your quests and validate them without going through the user interface.<br><br>
@@ -8,18 +8,18 @@ Small addons that will take most of your quests and validate them without going 
 ## Compatibility :
 > In progress
 <div align="left">
-  <img src="src/Dragonflight.png" alt="logo SL" width="20%">
+  <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/Dragonflight.png" alt="logo SL" width="20%">
 </div>
 
 > Retail
 <div align="left">
-  <img src="src/Shadowlands.png" alt="logo SL" width="20%">
+  <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/Shadowlands.png" alt="logo SL" width="20%">
 </div>
 
 > Classic
 <div align="left">
-  <img src="src/Wrath.png" alt="logo Wotlk" width="20%">
-  <img src="src/WoW.png" alt="logo Vanilla" width="20%">
+  <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/Wrath.png" alt="logo Wotlk" width="20%">
+  <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/WoW.png" alt="logo Vanilla" width="20%">
 </div>
 
 ## Use cases :
