@@ -8,3 +8,5 @@
 ## X-Curse-Project-ID: 686482
 
 autoQuest.lua
+abandonQuest.lua
+help.lua
