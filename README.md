@@ -1,4 +1,4 @@
-# AutoQuest — v1.0.7
+# AutoQuest — v1.0.8-rc1
 <div align="center">
   <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>
@@ -29,24 +29,11 @@ Small addons that will take most of your quests and validate them without going 
 - Return single quests
 - Return multiple quests
 - Return quests with the continue
+- Abandon all quests with command
 
-## Function used
-```bash
-C_GossipInfo.GetNumAvailableQuests()
-C_GossipInfo.GetNumActiveQuests()
-C_GossipInfo.SelectAvailableQuest()
-C_GossipInfo.SelectActiveQuest()
-GetNumAvailableQuests()
-GetNumActiveQuests()
-SelectAvailableQuest()
-SelectActiveQuest()
-AcceptQuest()
-CompleteQuest()
-GetNumQuestRewards()
-GetQuestReward()
-CloseQuest()
-PlaySound()
-```
+## Chat commands :
+- Help : `/autoquest-help`
+- Abandon all quests : `/autoquest-abandon`
 
 ## API Base 
 https://wowpedia.fandom.com/wiki/World_of_Warcraft_API
