@@ -29,6 +29,7 @@ Small addons that will take most of your quests and validate them without going 
 - Return single quests
 - Return multiple quests
 - Return quests with the continue
+- Abandon all quests with command
 
 ## Chat commands :
 - Help : `/autoquest-help`
