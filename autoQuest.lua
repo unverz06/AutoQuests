@@ -1,6 +1,8 @@
+-- Var
 local default = 1;
-local msgReward = "AutoQuest Alert — Choose your reward !"
+local msg_aq_reward = "AutoQuest — Choose your reward !"
 
+-- Event
 AQ_EventFrame = CreateFrame("Frame")
 
 AQ_EventFrame:RegisterEvent ("GOSSIP_SHOW")
@@ -63,7 +65,7 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
     -- print("Reward count: " .. npcQuestRewardsCount .. ".") -- DEBUG
 
     if (npcQuestRewardsCount > 0) then
-      print(msgReward)
+      print(msg_aq_reward)
       PlaySound(5274, "master")
     else
       GetQuestReward(default)
