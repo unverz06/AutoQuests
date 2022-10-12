@@ -30,23 +30,9 @@ Small addons that will take most of your quests and validate them without going 
 - Return multiple quests
 - Return quests with the continue
 
-## Function used
-```bash
-C_GossipInfo.GetNumAvailableQuests()
-C_GossipInfo.GetNumActiveQuests()
-C_GossipInfo.SelectAvailableQuest()
-C_GossipInfo.SelectActiveQuest()
-GetNumAvailableQuests()
-GetNumActiveQuests()
-SelectAvailableQuest()
-SelectActiveQuest()
-AcceptQuest()
-CompleteQuest()
-GetNumQuestRewards()
-GetQuestReward()
-CloseQuest()
-PlaySound()
-```
+## Chat commands :
+- Help : `/autoquest-help`
+- Abandon all quests : `/autoquest-abandon`
 
 ## API Base 
 https://wowpedia.fandom.com/wiki/World_of_Warcraft_API
