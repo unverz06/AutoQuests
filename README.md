@@ -4,4 +4,4 @@
 </div>
 <br>
 ## Go to Master branch ! 
-https://github.com/unverz06/AutoQuest
+https://github.com/unverz06/AutoQuests
