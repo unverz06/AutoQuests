@@ -1,5 +1,5 @@
 -- Cmd "/"
-SLASH_AQ1 = "/autoquest-abandon"
+SLASH_AAQ1 = "/autoquest-abandon"
 
 -- Var
 local msg_aq_abandon = "AutoQuest — All Quests have been abandoned"
@@ -23,4 +23,4 @@ local function AbandonAllQuestsHandler()
   print(msg_aq_abandon)
 end
 
-SlashCmdList['AQ'] =  AbandonAllQuestsHandler
+SlashCmdList['AAQ'] = AbandonAllQuestsHandler
