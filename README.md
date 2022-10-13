@@ -2,7 +2,7 @@
 <div align="center">
   <img src="https://raw.githubusercontent.com/unverz06/AutoQuests/readme/src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>
-
+<br>
 Takes and returns your quests automatically.
 
 ## Compatibility :
