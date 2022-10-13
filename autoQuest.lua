@@ -1,6 +1,7 @@
 -- Var
+local player = UnitName("player")
 local default = 1;
-local msg_aq_reward = "AutoQuest — Choose your reward !"
+local msg_aq_reward = "AutoQuest — " .. player .. ", Choose your reward and complete your quest!"
 
 -- Event
 AQ_EventFrame = CreateFrame("Frame")
@@ -12,14 +13,16 @@ AQ_EventFrame:RegisterEvent ("QUEST_COMPLETE")
 AQ_EventFrame:RegisterEvent ("QUEST_GREETING")
 
 AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
+
   --[[
     Start Event GOSSIP_*
   ]]
+
   if (event=="GOSSIP_SHOW") then
     local npcGossipQuestAvailableCount = C_GossipInfo.GetNumAvailableQuests()
     local npcGossipQuestCompleteCount = C_GossipInfo.GetNumActiveQuests()
 
-    -- print("Available: " .. npcGossipQuestAvailableCount .. ". In progress: " .. npcGossipQuestCompleteCount ..".") -- DEBUG
+    -- print("AutoQuest Log — Available: " .. npcGossipQuestAvailableCount .. ". In progress: " .. npcGossipQuestCompleteCount ..".") -- DEBUG
 
     if (npcGossipQuestAvailableCount > 0) then
       for i = 1, C_GossipInfo.GetNumAvailableQuests() do
@@ -31,14 +34,16 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
       end
     end
   end
+
     --[[
     Start Event QUEST_*
   ]]
+
   if (event=="QUEST_GREETING") then
     local npcAvailableQuestCount = GetNumAvailableQuests()
     local npcActiveQuestCount = GetNumActiveQuests()
 
-    -- print("Available: " .. npcAvailableQuestCount .. ". In progress: " .. npcActiveQuestCount ..".") -- DEBUG
+    -- print("AutoQuest Log — Available: " .. npcAvailableQuestCount .. ". In progress: " .. npcActiveQuestCount ..".") -- DEBUG
 
     if (npcAvailableQuestCount > 0) then
       for i = 1, GetNumAvailableQuests() do
@@ -51,18 +56,24 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
     end
   end
 
+  if (event=="QUEST_FINISHED") then
+    -- print("AutoQuest Log — Is QUEST_FINISHED event.") -- DEBUG
+  end
+
   if (event=="QUEST_DETAIL") then
+    -- print("AutoQuest Log — Is QUEST_DETAIL event.") -- DEBUG
     AcceptQuest()
   end
 
   if (event=="QUEST_PROGRESS") then
+    -- print("AutoQuest Log — Is QUEST_PROGRESS event.") -- DEBUG
     CompleteQuest()
   end
 
   if (event=="QUEST_COMPLETE") then
-    local npcQuestRewardsCount = GetNumQuestRewards()
+    local npcQuestRewardsCount = GetNumQuestChoices()
 
-    -- print("Reward count: " .. npcQuestRewardsCount .. ".") -- DEBUG
+    -- print("AutoQuest Log — Reward count: " .. npcQuestRewardsCount .. ".") -- DEBUG
 
     if (npcQuestRewardsCount > 0) then
       print(msg_aq_reward)
@@ -70,7 +81,7 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
     else
       GetQuestReward(default)
     end
-    -- CloseQuest()
   end
 
 end)
+
