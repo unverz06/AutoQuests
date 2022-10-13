@@ -1,8 +1,8 @@
 -- Cmd "/"
-SLASH_AAQ1 = "/autoquest-abandon"
+SLASH_AAQ1 = "/aq-abandon"
 
 -- Var
-local msg_aq_abandon = "AutoQuest — All Quests have been abandoned"
+local msg_aq_abandon = "AutoQuests — All Quests have been abandoned"
 
 -- Function
 local function getMaxQuests()

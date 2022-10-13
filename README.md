@@ -1,4 +1,4 @@
-# AutoQuest — v1.0.8
+# AutoQuests — v1.0.9
 <div align="center">
   <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>
@@ -32,8 +32,8 @@ Small addons that will take most of your quests and validate them without going 
 - Abandon all quests with command
 
 ## Chat commands :
-- Help : `/autoquest-help`
-- Abandon all quests : `/autoquest-abandon`
+- Help : `/aq-help`
+- Abandon all quests : `/aq-abandon`
 
 ## API Base 
 https://wowpedia.fandom.com/wiki/World_of_Warcraft_API
