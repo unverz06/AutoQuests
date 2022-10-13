@@ -1,9 +1,9 @@
 # AutoQuests — v1.0.9
 <div align="center">
-  <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/AutoQuest_banner.jpg" alt="banner" width="100%">
+  <img src="https://raw.githubusercontent.com/unverz06/AutoQuests/readme/src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>
 
-Small addons that will take most of your quests and validate them without going through the user interface.<br><br>
+Takes and returns your quests automatically.
 
 ## Compatibility :
 > In progress
