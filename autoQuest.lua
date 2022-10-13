@@ -75,7 +75,7 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
 
     -- print("AutoQuest Log — Reward count: " .. npcQuestRewardsCount .. ".") -- DEBUG
 
-    if (npcQuestRewardsCount > 0) then
+    if (npcQuestRewardsCount > 1) then
       print(msg_aq_reward)
       PlaySound(5274, "master")
     else
