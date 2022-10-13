@@ -1,5 +1,5 @@
 -- Cmd "/"
-SLASH_AQ2 = "/autoquest-help"
+SLASH_HELP1 = "/autoquest-help"
 
 -- Var
 local function AutoQuestHelper()
@@ -11,4 +11,4 @@ local function AutoQuestHelper()
   print(" ")
 end
 
-SlashCmdList['AQ'] =  AutoQuestHelper
+SlashCmdList['HELP'] =  AutoQuestHelper
