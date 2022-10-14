@@ -1,4 +1,4 @@
-# AutoQuests — v1.0.9
+# AutoQuests — v1.0.10
 <div align="center">
   <img src="https://raw.githubusercontent.com/unverz06/AutoQuests/readme/src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>
@@ -14,12 +14,6 @@ Takes and returns your quests automatically.
 > Retail
 <div align="left">
   <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/Shadowlands.png" alt="logo SL" width="20%">
-</div>
-
-> Classic
-<div align="left">
-  <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/Wrath.png" alt="logo Wotlk" width="20%">
-  <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/WoW.png" alt="logo Vanilla" width="20%">
 </div>
 
 ## Use cases :
