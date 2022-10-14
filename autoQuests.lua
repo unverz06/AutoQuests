@@ -2,7 +2,9 @@
 local player = UnitName("player")
 local default = 1;
 local color = "cffF08080";
-local msg_aq_reward = "\124" .. color .. "AutoQuests — " .. player .. ", Choose your reward and complete your quest!\124r"
+local color_debug = "cffECE75F";
+local msg_aq_reward = "\124" .. color .. "AutoQuests — " .. player .. ", Choose your reward and complete your quest.\124r"
+local msg_aq_gossip = "\124" .. color .. "AutoQuests — " .. player .. ", I detect a possibility of gossip, I let you make your choice.\124r"
 
 
 -- Event
@@ -23,14 +25,18 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
   if (event=="GOSSIP_SHOW") then
     local npcGossipQuestAvailableCount = C_GossipInfo.GetNumAvailableQuests()
     local npcGossipQuestCompleteCount = C_GossipInfo.GetNumActiveQuests()
+    local npcGossipOptions = C_GossipInfo.GetNumOptions()
 
-    -- print("AutoQuests Log — Available: " .. npcGossipQuestAvailableCount .. ". In progress: " .. npcGossipQuestCompleteCount ..".") -- DEBUG
+    -- print("\124" .. color_debug .. "AutoQuests Log — Available Quests: " .. npcGossipQuestAvailableCount .. ". Quests in progress: " .. npcGossipQuestCompleteCount ..". Available Options: " .. npcGossipOptions ..".\124r") -- DEBUG
 
-    if (npcGossipQuestAvailableCount > 0) then
+    if (npcGossipOptions > 0) then
+      print(msg_aq_gossip)
+      PlaySound(5274, "master")
+    elseif (npcGossipQuestAvailableCount >= 1) then
       for i = 1, C_GossipInfo.GetNumAvailableQuests() do
         C_GossipInfo.SelectAvailableQuest(i)
       end
-    elseif (npcGossipQuestCompleteCount > 0) then
+    elseif (npcGossipQuestCompleteCount >= 1) then
       for i = 1, C_GossipInfo.GetNumActiveQuests() do
         C_GossipInfo.SelectActiveQuest(i)
       end
@@ -45,7 +51,7 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
     local npcAvailableQuestCount = GetNumAvailableQuests()
     local npcActiveQuestCount = GetNumActiveQuests()
 
-    -- print("AutoQuests Log — Available: " .. npcAvailableQuestCount .. ". In progress: " .. npcActiveQuestCount ..".") -- DEBUG
+    -- print("\124" .. color_debug .. "AutoQuests Log — Available: " .. npcAvailableQuestCount .. ". In progress: " .. npcActiveQuestCount ..".\124r") -- DEBUG
 
     if (npcAvailableQuestCount > 0) then
       for i = 1, GetNumAvailableQuests() do
@@ -59,23 +65,23 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
   end
 
   if (event=="QUEST_FINISHED") then
-    -- print("AutoQuests Log — Is QUEST_FINISHED event.") -- DEBUG
+    -- print("\124" .. color_debug .. "AutoQuests Log — Is QUEST_FINISHED event.\124r") -- DEBUG
   end
 
   if (event=="QUEST_DETAIL") then
-    -- print("AutoQuests Log — Is QUEST_DETAIL event.") -- DEBUG
+    -- print("\124" .. color_debug .. "AutoQuests Log — Is QUEST_DETAIL event.\124r") -- DEBUG
     AcceptQuest()
   end
 
   if (event=="QUEST_PROGRESS") then
-    -- print("AutoQuests Log — Is QUEST_PROGRESS event.") -- DEBUG
+    -- print("\124" .. color_debug .. "AutoQuests Log — Is QUEST_PROGRESS event.\124r") -- DEBUG
     CompleteQuest()
   end
 
   if (event=="QUEST_COMPLETE") then
     local npcQuestRewardsCount = GetNumQuestChoices()
 
-    -- print("AutoQuests Log — Reward count: " .. npcQuestRewardsCount .. ".") -- DEBUG
+    -- print("\124" .. color_debug .. "AutoQuests Log — Reward count: " .. npcQuestRewardsCount .. ".\124r") -- DEBUG
 
     if (npcQuestRewardsCount > 1) then
       print(msg_aq_reward)
