@@ -1,7 +1,9 @@
 -- Var
 local player = UnitName("player")
 local default = 1;
-local msg_aq_reward = "AutoQuests — " .. player .. ", Choose your reward and complete your quest!"
+local color = "cffF08080";
+local msg_aq_reward = "\124" .. color .. "AutoQuests — " .. player .. ", Choose your reward and complete your quest!\124r"
+
 
 -- Event
 AQ_EventFrame = CreateFrame("Frame")
