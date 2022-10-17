@@ -30,7 +30,7 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
 
     -- print("\124" .. color_debug .. "AutoQuests Log — Available Quests: " .. npcGossipQuestAvailableCount .. ". Quests in progress: " .. npcGossipQuestCompleteCount .. ". Available Options: " .. npcGossipOptionsNumbers .. ". Gossip Type: " .. npcGossipType .. ".\124r") -- DEBUG
 
-    if (npcGossipOptionsNumbers > 0) then
+    if (npcGossipOptionsNumbers > 0) then 
       -- if Gossip have choice (banker, battlemaster, binder, gossip, healer, petition, tabard, taxi, trainer, unlearn, or vendor)
     elseif (npcGossipQuestAvailableCount >= 1) then
       for i = 1, C_GossipInfo.GetNumAvailableQuests() do
