@@ -1,6 +1,4 @@
 ## Interface: 90207
-## Interface-Classic: 11403
-## Interface-WOTLKC: 30400
 ## Title: AutoQuests
 ## Notes: Takes and returns your quests automatically.
 ## Author: unverz

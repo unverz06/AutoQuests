@@ -2,7 +2,8 @@
 SLASH_AAQ1 = "/aq-abandon"
 
 -- Var
-local msg_aq_abandon = "AutoQuests — All Quests have been abandoned"
+local color = "cffF08080";
+local msg_aq_abandon = "\124" .. color .. "AutoQuests — All Quests have been abandoned\124r"
 
 -- Function
 local function getMaxQuests()
