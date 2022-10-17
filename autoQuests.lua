@@ -32,11 +32,11 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
 
     if (npcGossipOptionsNumbers > 0) then 
       -- if Gossip have choice (banker, battlemaster, binder, gossip, healer, petition, tabard, taxi, trainer, unlearn, or vendor)
-    elseif (npcGossipQuestAvailableCount >= 1) then
+    elseif (npcGossipQuestAvailableCount > 0) then
       for i = 1, C_GossipInfo.GetNumAvailableQuests() do
         C_GossipInfo.SelectAvailableQuest(i)
       end
-    elseif (npcGossipQuestCompleteCount >= 1) then
+    elseif (npcGossipQuestCompleteCount > 0) then
       for i = 1, C_GossipInfo.GetNumActiveQuests() do
         C_GossipInfo.SelectActiveQuest(i)
       end
