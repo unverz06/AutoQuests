@@ -1,5 +1,4 @@
 ## Interface: 100000
-# /dump select(4, GetBuildInfo())
 ## Interface-WOTLKC: 30400
 ## Interface-Classic: 11403
 ## Title: AutoQuests
@@ -11,3 +10,5 @@
 autoQuests.lua
 abandonQuests.lua
 help.lua
+
+# /dump select(4, GetBuildInfo())
