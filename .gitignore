@@ -1,2 +1,5 @@
 # ignore all src folder
 src/
+
+# VSCode
+*.code-workspace
