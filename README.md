@@ -16,6 +16,14 @@ Takes and returns your quests automatically.
   <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/Shadowlands.png" alt="logo SL" width="20%">
 </div>
 
+> Classic
+<div align="left">
+  <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/Wrath.png" alt="logo SL" width="20%">
+</div>
+<div align="left">
+  <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/WoW.png" alt="logo SL" width="20%">
+</div>
+
 ## Use cases :
 - Taking single quests
 - Taking multiple quests
