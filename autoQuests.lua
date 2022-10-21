@@ -25,12 +25,12 @@ AQ_EventFrame:SetScript("OnEvent", function(self, event, ...)
   if (event=="GOSSIP_SHOW") then
     local npcGossipQuestAvailableCount = C_GossipInfo.GetNumAvailableQuests()
     local npcGossipQuestCompleteCount = C_GossipInfo.GetNumActiveQuests()
-    local npcGossipOptionsNumbers = #C_GossipInfo.GetOptions()
-    local npcGossipType = "Unknown"
+    local npcGossipOptionsNumbers = #C_GossipInfo.GetOptions() -- Shadowlands and more
+    local npcGossipOptionsNumbersClassic = C_GossipInfo.GetNumOptions() -- Retro compatibility (Classic)
 
     -- print("\124" .. color_debug .. "AutoQuests Log — Available Quests: " .. npcGossipQuestAvailableCount .. ". Quests in progress: " .. npcGossipQuestCompleteCount .. ". Available Options: " .. npcGossipOptionsNumbers .. ". Gossip Type: " .. npcGossipType .. ".\124r") -- DEBUG
 
-    if (npcGossipOptionsNumbers > 0) then 
+    if (npcGossipOptionsNumbers > 0 or npcGossipOptionsNumbersClassic > 0) then 
       -- if Gossip have choice (banker, battlemaster, binder, gossip, healer, petition, tabard, taxi, trainer, unlearn, or vendor)
     elseif (npcGossipQuestAvailableCount > 0) then
       for i = 1, C_GossipInfo.GetNumAvailableQuests() do
