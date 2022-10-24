@@ -1,5 +1,6 @@
-# ignore all src folder
+# folders
 src/
 
-# VSCode
+# files
 *.code-workspace
+CHANGELOG.md
