@@ -1,4 +1,7 @@
--- Var
+--[[
+    Variable
+]]
+
 local _, L = ...;
 
 local CHARACTER_DEFAULTS = {
@@ -8,7 +11,10 @@ local CHARACTER_DEFAULTS = {
 local player = UnitName("player")
 local default = 1;
 
--- Messages
+--[[
+    Messages
+]]
+
 local function selfMessage(v)
   DEFAULT_CHAT_FRAME:AddMessage(v, 0.19, 0.55, 1.0);
 end
@@ -17,7 +23,16 @@ local function debugMessage(v)
   DEFAULT_CHAT_FRAME:AddMessage(v, 	1.0, 1.0, 0.0);
 end
 
--- AutoQuests
+--[[
+    Settings
+]]
+
+-- Code settings
+
+--[[
+    AutoQuests & AbandonAllQuests
+]]
+
 local function RegisterAutoQuestsEvents()
 
   local function Autoquests(self, event, ...)
@@ -31,7 +46,9 @@ local function RegisterAutoQuestsEvents()
       -- debugMessage(L.DEBUG.LOG .. L.BACK .. L.DEBUG.AVAILABLE .. npcGossipQuestAvailableCount .. L.BACK .. L.DEBUG.PROGRESS .. npcGossipQuestCompleteCount .. L.BACK .. L.DEBUG.OPTION .. npcGossipOptionsNumbers .. L.BACK .. L.DEBUG.OPTIONC .. npcGossipOptionsNumbersClassic); -- DEBUG
   
       if (npcGossipOptionsNumbers > 0 or npcGossipOptionsNumbersClassic > 0) then 
+
         -- if Gossip have choice (banker, battlemaster, binder, gossip, healer, petition, tabard, taxi, trainer, unlearn, or vendor)
+
       elseif (npcGossipQuestAvailableCount > 0) then
         for i = 1, C_GossipInfo.GetNumAvailableQuests() do
           C_GossipInfo.SelectAvailableQuest(i)
@@ -61,12 +78,16 @@ local function RegisterAutoQuestsEvents()
     end
   
     if (event=="QUEST_DETAIL") then
+    
       -- debugMessage(L.DEBUG.LOG .. L.BACK .. L.DEBUG.ISDETAIL); -- DEBUG
       AcceptQuest()
+
     end
   
     if (event=="QUEST_PROGRESS") then
+
       -- debugMessage(L.DEBUG.LOG .. L.BACK .. L.DEBUG.ISPROGRESS); -- DEBUG
+
       CompleteQuest()
     end
   
@@ -93,7 +114,16 @@ local function RegisterAutoQuestsEvents()
     f:SetScript("OnEvent", Autoquests)
 end
 
--- Load the addon
+--[[
+    Options panel
+]]
+
+-- Code panel
+
+--[[
+    Load 
+]]
+
 local f = CreateFrame("Frame")
 f:RegisterEvent("PLAYER_LOGIN")
 f:RegisterEvent("ADDON_LOADED")
