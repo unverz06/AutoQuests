@@ -1,5 +1,5 @@
 -- Cmd "/"
-SLASH_AAQ1 = "/aq-aaq"
+SLASH_AAQ1 = "/aaq"
 
 -- Var
 local color = "cffF08080";
