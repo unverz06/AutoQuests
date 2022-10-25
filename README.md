@@ -1,4 +1,4 @@
-# AutoQuests — v1.0.11
+# AutoQuests — v2.0.0
 <div align="center">
   <img src="https://raw.githubusercontent.com/unverz06/AutoQuests/readme/src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>
@@ -6,14 +6,9 @@
 Takes and returns your quests automatically.
 
 ## Compatibility :
-> In progress
-<div align="left">
-  <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/Dragonflight.png" alt="logo DF" width="20%">
-</div>
-
 > Retail
 <div align="left">
-  <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/Shadowlands.png" alt="logo SL" width="20%">
+  <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/Dragonflight.png" alt="logo SL" width="20%">
 </div>
 
 > Classic
