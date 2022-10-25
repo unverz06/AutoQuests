@@ -1,4 +1,4 @@
-# AutoQuests — v2.0.0
+# AutoQuests — v2.1.0
 <div align="center">
   <img src="https://raw.githubusercontent.com/unverz06/AutoQuests/readme/src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>
@@ -26,11 +26,7 @@ Takes and returns your quests automatically.
 - Return single quests
 - Return multiple quests
 - Return quests with the continue
-- Abandon all quests with command
-
-## Chat commands :
-- Help : `/aq`
-- Abandon all quests : `/aq-aaq`
+- - Abandon all quests (/aaq) #paused
 
 ## API Base 
 https://wowpedia.fandom.com/wiki/World_of_Warcraft_API
