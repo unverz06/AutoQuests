@@ -1,6 +1,7 @@
 # AutoQuests — Changelog
 
-# 2.1.1 (in progress)
+> Next
+# 2.1.1
 - Add locale/fr
 
 # 2.1.0
@@ -11,6 +12,7 @@
 # 2.0.0
 - Update .toc for Dragonflight
 
+> Released
 # 1.0.x
 - Taking single quests
 - Taking multiple quests
