@@ -9,6 +9,10 @@ L.TITLE = "AutoQuests — "
 L.REWARD = ", Choose your reward and complete your quest."
 L.BACK = "\n"
 
+L.AutoQuestsBtn = {
+  text = "Automatic Quests",
+}
+
 L.DEBUG = {
   LOG = "AutoQuests Log: ",
   AVAILABLE = "Available Quests: ",
