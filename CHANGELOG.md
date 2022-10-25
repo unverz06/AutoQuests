@@ -1,19 +1,19 @@
 # AutoQuests — Changelog
 
 > Next
-# 2.1.1
+## 2.1.1
 - Add locale/fr
 
-# 2.1.0
+## 2.1.0
 - Addon refactor
 - Add locale/en
 - Add settings
 
-# 2.0.0
+## 2.0.0
 - Update .toc for Dragonflight
 
 > Released
-# 1.0.x
+## 1.0.x
 - Taking single quests
 - Taking multiple quests
 - Taking a quest in a chat window with an NPC
