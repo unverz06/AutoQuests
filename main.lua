@@ -6,7 +6,7 @@ local _, L = ...;
 
 local CHARACTER_DEFAULTS = {
     AutoQuests = true,
-    AbandonAllQuests = false,
+    -- AbandonAllQuests = false,
 }
 local player = UnitName("player")
 local default = 1;
@@ -27,7 +27,33 @@ end
     Settings
 ]]
 
--- Code settings
+local function LoadSettings()
+    
+  if autoquests_settings == nil then
+      autoquests_settings = {}
+  end
+
+  local function CopyDefaults(src, dst)
+      if type(src) ~= "table" then
+          return {}
+      end
+      if type(dst) ~= "table" then
+          dst = {}
+      end
+
+      for k, v in pairs(src) do
+          if type(v) == "table" then
+              dst[k] = CopyDefaults(v, dst[k])
+          elseif type(v) ~= type(dst[k]) then
+              dst[k] = v
+          end
+      end
+
+      return dst
+  end
+
+  CopyDefaults(CHARACTER_DEFAULTS, autoquests_settings)
+end
 
 --[[
     AutoQuests & AbandonAllQuests
@@ -118,7 +144,43 @@ end
     Options panel
 ]]
 
--- Code panel
+local configurationPanelCreated = false
+
+function CreateConfigurationPanel()
+    if configurationPanelCreated then
+        return nil
+    end
+    configurationPanelCreated = true
+
+    local pre = _ .. "Config_"
+
+    local ConfigurationPanel = CreateFrame("Frame", pre .. "MainFrame");
+	ConfigurationPanel.name = _
+    InterfaceOptions_AddCategory(ConfigurationPanel)
+
+    -- Title
+    local IntroMessageHeader = ConfigurationPanel:CreateFontString(nil, "ARTWORK","GameFontNormalLarge")
+	IntroMessageHeader:SetPoint("TOPLEFT", 10, -10)
+    IntroMessageHeader:SetText(_ .. " " .. GetAddOnMetadata(_, "Version"))
+    
+    -- AutoQuests
+    local AutoQuestsBtn = CreateFrame("CheckButton", pre .. "AutoQuestsBtn", ConfigurationPanel, "ChatConfigCheckButtonTemplate")
+    AutoQuestsBtn:SetPoint("TOPLEFT", 10, -40)
+    getglobal(AutoQuestsBtn:GetName().."Text"):SetText(L.AutoQuestsBtn.text)
+    
+    -- save
+    ConfigurationPanel.okay = function(self)
+        autoquests_settings.AutoQuests = AutoQuestsBtn:GetChecked()
+    end
+
+    -- cancel
+    ConfigurationPanel.cancel = function(self)
+        AutoQuestsBtn:SetChecked(autoquests_settings.AutoQuests)
+    end
+
+    -- init
+    ConfigurationPanel.cancel()
+end
 
 --[[
     Load 
@@ -129,8 +191,8 @@ f:RegisterEvent("PLAYER_LOGIN")
 f:RegisterEvent("ADDON_LOADED")
 f:SetScript("OnEvent", function(self, event)
     if event == "ADDON_LOADED" then
-        -- LoadSettings()
-        -- CreateConfigurationPanel()
+        LoadSettings()
+        CreateConfigurationPanel()
     elseif event == "PLAYER_LOGIN" then
       RegisterAutoQuestsEvents()
       selfMessage(L.WELCOME.TEXT_1 .. player .. L.WELCOME.TEXT_2);
