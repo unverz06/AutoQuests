@@ -9,10 +9,10 @@
 - Add locale/en
 - Add settings
 
+> Released
 ## 2.0.0
 - Update .toc for Dragonflight
 
-> Released
 ## 1.0.x
 - Taking single quests
 - Taking multiple quests
