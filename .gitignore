@@ -1,9 +1,9 @@
 # folders
-src/
+.other
+.vscode
 
 # files
 *.code-workspace
-CHANGELOG.md
 
 # Compiled Lua sources
 luac.out
