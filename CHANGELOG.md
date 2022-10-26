@@ -10,7 +10,7 @@
 - Add settings
 
 > Released
-## 2.0.0
+## 2.0.1
 - Bug fix with GOSSIP_EVENT
 
 ## 2.0.0
