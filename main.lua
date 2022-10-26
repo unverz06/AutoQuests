@@ -66,12 +66,11 @@ local function RegisterAutoQuestsEvents()
     if (event=="GOSSIP_SHOW") then
       local npcGossipQuestAvailableCount = C_GossipInfo.GetNumAvailableQuests()
       local npcGossipQuestCompleteCount = C_GossipInfo.GetNumActiveQuests()
-      local npcGossipOptionsNumbers = #C_GossipInfo.GetOptions() -- Shadowlands and more
-      local npcGossipOptionsNumbersClassic = C_GossipInfo.GetNumOptions() -- Retro compatibility (Classic)
+      local npcGossipOptionsNumbers = #C_GossipInfo.GetOptions()
   
-      -- debugMessage(L.DEBUG.LOG .. L.BACK .. L.DEBUG.AVAILABLE .. npcGossipQuestAvailableCount .. L.BACK .. L.DEBUG.PROGRESS .. npcGossipQuestCompleteCount .. L.BACK .. L.DEBUG.OPTION .. npcGossipOptionsNumbers .. L.BACK .. L.DEBUG.OPTIONC .. npcGossipOptionsNumbersClassic); -- DEBUG
+      -- debugMessage(L.DEBUG.LOG .. L.BACK .. L.DEBUG.AVAILABLE .. npcGossipQuestAvailableCount .. L.BACK .. L.DEBUG.PROGRESS .. npcGossipQuestCompleteCount .. L.BACK .. L.DEBUG.OPTION .. npcGossipOptionsNumbers); -- DEBUG
   
-      if (npcGossipOptionsNumbers > 0 or npcGossipOptionsNumbersClassic > 0) then 
+      if (npcGossipOptionsNumbers > 0) then 
 
         -- if Gossip have choice (banker, battlemaster, binder, gossip, healer, petition, tabard, taxi, trainer, unlearn, or vendor)
 
@@ -167,6 +166,11 @@ function CreateConfigurationPanel()
     local AutoQuestsBtn = CreateFrame("CheckButton", pre .. "AutoQuestsBtn", ConfigurationPanel, "ChatConfigCheckButtonTemplate")
     AutoQuestsBtn:SetPoint("TOPLEFT", 10, -40)
     getglobal(AutoQuestsBtn:GetName().."Text"):SetText(L.AutoQuestsBtn.text)
+
+    -- AbandonAllQuests
+    local AbandonAllQuestsBtn = CreateFrame("CheckButton", pre .. "AbandonAllQuestsBtn", ConfigurationPanel, "ChatConfigCheckButtonTemplate")
+    AbandonAllQuestsBtn:SetPoint("TOPLEFT", 10, -60)
+    getglobal(AbandonAllQuestsBtn:GetName().."Text"):SetText(L.AbandonAllQuestsBtn.text)
     
     -- save
     ConfigurationPanel.okay = function(self)
@@ -191,8 +195,8 @@ f:RegisterEvent("PLAYER_LOGIN")
 f:RegisterEvent("ADDON_LOADED")
 f:SetScript("OnEvent", function(self, event)
     if event == "ADDON_LOADED" then
-        LoadSettings()
-        CreateConfigurationPanel()
+        --LoadSettings()
+        --CreateConfigurationPanel()
     elseif event == "PLAYER_LOGIN" then
       RegisterAutoQuestsEvents()
       selfMessage(L.WELCOME.TEXT_1 .. player .. L.WELCOME.TEXT_2);
