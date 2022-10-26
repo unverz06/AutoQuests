@@ -1,16 +1,18 @@
 local _, L = ...;
 
 L.WELCOME = {
-  TEXT_1 = "Hi ",
-  TEXT_2 = ", AutoQuests is loaded.",
+  HI = "Hi ",
+  LOADED = ", AutoQuests is loaded.",
 }
 
 L.TITLE = "AutoQuests — "
 L.REWARD = ", Choose your reward and complete your quest."
 L.BACK = "\n"
 
-L.AutoQuestsBtn = {
-  text = "Automatic Quests",
+L.OPTIONS = {
+  THANKS = "Thanks to use Autoquests.",
+  TICKET = "If you have bug, please create ticket in my github hors comment on curseforge",
+  SUPPORT = "Use paypal donation for support this project"
 }
 
 L.DEBUG = {
