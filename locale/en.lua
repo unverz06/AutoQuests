@@ -1,7 +1,7 @@
 local _, L = ...;
 
 L.WELCOME = {
-  TEXT_1 = "Hey ",
+  TEXT_1 = "Hi ",
   TEXT_2 = ", AutoQuests is loaded.",
 }
 
@@ -13,12 +13,15 @@ L.AutoQuestsBtn = {
   text = "Automatic Quests",
 }
 
+L.AbandonAllQuestsBtn = {
+  text = "Abandon All Quests Command",
+}
+
 L.DEBUG = {
   LOG = "AutoQuests Log: ",
   AVAILABLE = "Available Quests: ",
   PROGRESS = "Quests in progress: ",
   OPTION = "Available Options: ",
-  OPTIONC = "Available Options Classic: ",
   REWARDCOUNT = "Reward count: ",
   ISDETAIL = "Is QUEST_DETAIL event",
   ISPROGRESS = "Is QUEST_PROGRESS event",

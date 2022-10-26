@@ -10,3 +10,4 @@
 
 main.lua
 locale/en.lua
+locale/fr.lua
