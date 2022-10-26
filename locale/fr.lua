@@ -15,10 +15,6 @@ if GetLocale() == "frFR" then
     text = "Quetes Automatiques",
   }
 
-  L.AbandonAllQuestsBtn = {
-    text = "Abandon All Quests Commande",
-  }
-
   L.DEBUG = {
     LOG = "AutoQuests Log: ",
     AVAILABLE = "Available Quests: ",

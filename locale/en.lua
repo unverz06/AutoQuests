@@ -13,10 +13,6 @@ L.AutoQuestsBtn = {
   text = "Automatic Quests",
 }
 
-L.AbandonAllQuestsBtn = {
-  text = "Abandon All Quests Command",
-}
-
 L.DEBUG = {
   LOG = "AutoQuests Log: ",
   AVAILABLE = "Available Quests: ",

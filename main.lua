@@ -6,8 +6,8 @@ local _, L = ...;
 
 local CHARACTER_DEFAULTS = {
     AutoQuests = true,
-    -- AbandonAllQuests = false,
 }
+
 local player = UnitName("player")
 local default = 1;
 
@@ -30,104 +30,109 @@ end
 local function LoadSettings()
     
   if autoquests_settings == nil then
-      autoquests_settings = {}
+    autoquests_settings = {}
   end
 
   local function CopyDefaults(src, dst)
-      if type(src) ~= "table" then
-          return {}
-      end
-      if type(dst) ~= "table" then
-          dst = {}
-      end
+    if type(src) ~= "table" then
+      return {}
+    end
+    if type(dst) ~= "table" then
+      dst = {}
+    end
 
-      for k, v in pairs(src) do
-          if type(v) == "table" then
-              dst[k] = CopyDefaults(v, dst[k])
-          elseif type(v) ~= type(dst[k]) then
-              dst[k] = v
-          end
+    for k, v in pairs(src) do
+      if type(v) == "table" then
+        dst[k] = CopyDefaults(v, dst[k])
+      elseif type(v) ~= type(dst[k]) then
+        dst[k] = v
       end
+    end
 
-      return dst
+    return dst
   end
 
   CopyDefaults(CHARACTER_DEFAULTS, autoquests_settings)
 end
 
 --[[
-    AutoQuests & AbandonAllQuests
+    AutoQuests
 ]]
 
 local function RegisterAutoQuestsEvents()
 
   local function Autoquests(self, event, ...)
 
-    if (event=="GOSSIP_SHOW") then
-      local npcGossipQuestAvailableCount = C_GossipInfo.GetNumAvailableQuests()
-      local npcGossipQuestCompleteCount = C_GossipInfo.GetNumActiveQuests()
-      local npcGossipOptionsNumbers = #C_GossipInfo.GetOptions()
-  
-      -- debugMessage(L.DEBUG.LOG .. L.BACK .. L.DEBUG.AVAILABLE .. npcGossipQuestAvailableCount .. L.BACK .. L.DEBUG.PROGRESS .. npcGossipQuestCompleteCount .. L.BACK .. L.DEBUG.OPTION .. npcGossipOptionsNumbers); -- DEBUG
-  
-      if (npcGossipOptionsNumbers > 0) then 
+    -- if autoquests_settings.AutoQuests == true then -- Check if settings are checked in panel
 
-        -- if Gossip have choice (banker, battlemaster, binder, gossip, healer, petition, tabard, taxi, trainer, unlearn, or vendor)
-
-      elseif (npcGossipQuestAvailableCount > 0) then
-        for i = 1, C_GossipInfo.GetNumAvailableQuests() do
-          C_GossipInfo.SelectAvailableQuest(i)
-        end
-      elseif (npcGossipQuestCompleteCount > 0) then
-        for i = 1, C_GossipInfo.GetNumActiveQuests() do
-          C_GossipInfo.SelectActiveQuest(i)
-        end
-      end
-    end
-  
-    if (event=="QUEST_GREETING") then
-      local npcAvailableQuestCount = GetNumAvailableQuests()
-      local npcActiveQuestCount = GetNumActiveQuests()
-  
-      -- debugMessage(L.DEBUG.LOG .. L.BACK .. L.DEBUG.AVAILABLE .. npcAvailableQuestCount .. L.BACK .. L.DEBUG.PROGRESS .. npcActiveQuestCount); -- DEBUG
-  
-      if (npcAvailableQuestCount > 0) then
-        for i = 1, GetNumAvailableQuests() do
-          SelectAvailableQuest(i)
-        end
-      elseif (npcActiveQuestCount > 0) then
-        for i = 1, GetNumActiveQuests() do
-          SelectActiveQuest(i)
-        end
-      end
-    end
-  
-    if (event=="QUEST_DETAIL") then
+      if (event=="GOSSIP_SHOW") then
+        local npcGossipQuestAvailableCount = C_GossipInfo.GetNumAvailableQuests()
+        local npcGossipQuestCompleteCount = C_GossipInfo.GetNumActiveQuests()
+        local npcGossipOptionsNumbers = #C_GossipInfo.GetOptions()
     
-      -- debugMessage(L.DEBUG.LOG .. L.BACK .. L.DEBUG.ISDETAIL); -- DEBUG
-      AcceptQuest()
+        -- debugMessage(L.DEBUG.LOG .. L.BACK .. L.DEBUG.AVAILABLE .. npcGossipQuestAvailableCount .. L.BACK .. L.DEBUG.PROGRESS .. npcGossipQuestCompleteCount .. L.BACK .. L.DEBUG.OPTION .. npcGossipOptionsNumbers); -- DEBUG
+    
+        if (npcGossipOptionsNumbers > 0) then 
 
-    end
-  
-    if (event=="QUEST_PROGRESS") then
+          -- if Gossip have choice (banker, battlemaster, binder, gossip, healer, petition, tabard, taxi, trainer, unlearn, or vendor)
 
-      -- debugMessage(L.DEBUG.LOG .. L.BACK .. L.DEBUG.ISPROGRESS); -- DEBUG
-
-      CompleteQuest()
-    end
-  
-    if (event=="QUEST_COMPLETE") then
-      local npcQuestRewardsCount = GetNumQuestChoices()
-  
-      -- debugMessage(L.DEBUG.LOG .. L.BACK .. L.DEBUG.REWARDCOUNT .. npcQuestRewardsCount); -- DEBUG
-  
-      if (npcQuestRewardsCount > 1) then
-        selfMessage(L.TITLE .. player .. L.REWARD);
-        PlaySound(5274, "master")
-      else
-        GetQuestReward(default)
+        elseif (npcGossipQuestAvailableCount > 0) then
+          for i = 1, C_GossipInfo.GetNumAvailableQuests() do
+            C_GossipInfo.SelectAvailableQuest(i)
+          end
+        elseif (npcGossipQuestCompleteCount > 0) then
+          for i = 1, C_GossipInfo.GetNumActiveQuests() do
+            C_GossipInfo.SelectActiveQuest(i)
+          end
+        end
       end
-    end
+    
+      if (event=="QUEST_GREETING") then
+        local npcAvailableQuestCount = GetNumAvailableQuests()
+        local npcActiveQuestCount = GetNumActiveQuests()
+    
+        -- debugMessage(L.DEBUG.LOG .. L.BACK .. L.DEBUG.AVAILABLE .. npcAvailableQuestCount .. L.BACK .. L.DEBUG.PROGRESS .. npcActiveQuestCount); -- DEBUG
+    
+        if (npcAvailableQuestCount > 0) then
+          for i = 1, GetNumAvailableQuests() do
+            SelectAvailableQuest(i)
+          end
+        elseif (npcActiveQuestCount > 0) then
+          for i = 1, GetNumActiveQuests() do
+            SelectActiveQuest(i)
+          end
+        end
+      end
+    
+      if (event=="QUEST_DETAIL") then
+      
+        -- debugMessage(L.DEBUG.LOG .. L.BACK .. L.DEBUG.ISDETAIL); -- DEBUG
+        AcceptQuest()
+
+      end
+    
+      if (event=="QUEST_PROGRESS") then
+
+        -- debugMessage(L.DEBUG.LOG .. L.BACK .. L.DEBUG.ISPROGRESS); -- DEBUG
+
+        CompleteQuest()
+      end
+    
+      if (event=="QUEST_COMPLETE") then
+        local npcQuestRewardsCount = GetNumQuestChoices()
+    
+        -- debugMessage(L.DEBUG.LOG .. L.BACK .. L.DEBUG.REWARDCOUNT .. npcQuestRewardsCount); -- DEBUG
+    
+        if (npcQuestRewardsCount > 1) then
+          selfMessage(L.TITLE .. player .. L.REWARD);
+          PlaySound(5274, "master")
+        else
+          GetQuestReward(default)
+        end
+      end
+
+    -- end
+
   end
 
   local f = CreateFrame("Frame")
@@ -166,11 +171,6 @@ function CreateConfigurationPanel()
     local AutoQuestsBtn = CreateFrame("CheckButton", pre .. "AutoQuestsBtn", ConfigurationPanel, "ChatConfigCheckButtonTemplate")
     AutoQuestsBtn:SetPoint("TOPLEFT", 10, -40)
     getglobal(AutoQuestsBtn:GetName().."Text"):SetText(L.AutoQuestsBtn.text)
-
-    -- AbandonAllQuests
-    local AbandonAllQuestsBtn = CreateFrame("CheckButton", pre .. "AbandonAllQuestsBtn", ConfigurationPanel, "ChatConfigCheckButtonTemplate")
-    AbandonAllQuestsBtn:SetPoint("TOPLEFT", 10, -60)
-    getglobal(AbandonAllQuestsBtn:GetName().."Text"):SetText(L.AbandonAllQuestsBtn.text)
     
     -- save
     ConfigurationPanel.okay = function(self)
