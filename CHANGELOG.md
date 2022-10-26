@@ -12,6 +12,7 @@
 - Add locale/en
 - Add locale/fr
 
+> Released
 ## 2.0.1
 - Bug fix with GOSSIP_EVENT
 
