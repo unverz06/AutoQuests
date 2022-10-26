@@ -5,7 +5,6 @@
 ## Notes: Takes and returns your quests automatically.
 ## Author: unverz
 ## Version: 2.1.0
-## SavedVariablesPerCharacter: autoquests_settings
 ## X-Curse-Project-ID: 686482
 
 main.lua
