@@ -11,6 +11,9 @@
 
 > Released
 ## 2.0.0
+- Bug fix with GOSSIP_EVENT
+
+## 2.0.0
 - Update .toc for Dragonflight
 
 ## 1.0.x
