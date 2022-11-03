@@ -103,56 +103,13 @@ local function RegisterAutoQuestsEvents()
 end
 
 --[[
-    Options panel
-]]
-
-local configurationPanelCreated = false
-
-function CreateConfigurationPanel()
-    if configurationPanelCreated then
-        return nil
-    end
-    configurationPanelCreated = true
-
-    local pre = _ .. "Config_"
-
-    local ConfigurationPanel = CreateFrame("Frame", pre .. "MainFrame");
-	ConfigurationPanel.name = _
-    InterfaceOptions_AddCategory(ConfigurationPanel)
-
-    -- Title
-    local IntroMessageHeader = ConfigurationPanel:CreateFontString(nil, "ARTWORK","GameFontNormalLarge")
-	IntroMessageHeader:SetPoint("TOPLEFT", 10, -10)
-    IntroMessageHeader:SetText(_ .. " " .. GetAddOnMetadata(_, "Version"))
-
-    -- Message thanks
-    local MessageContent1 = ConfigurationPanel:CreateFontString(nil, "ARTWORK","GameFontNormal")
-  MessageContent1:SetPoint("TOPLEFT", 10, -50)
-    MessageContent1:SetText(L.OPTIONS.THANKS)
-  
-    -- Message ticket
-    local MessageContent1 = ConfigurationPanel:CreateFontString(nil, "ARTWORK","GameFontNormal")
-    MessageContent1:SetPoint("TOPLEFT", 10, -65)
-      MessageContent1:SetText(L.OPTIONS.TICKET)
-
-    -- Message support
-    local MessageContent1 = ConfigurationPanel:CreateFontString(nil, "ARTWORK","GameFontNormal")
-    MessageContent1:SetPoint("TOPLEFT", 10, -95)
-      MessageContent1:SetText(L.OPTIONS.SUPPORT)
-
-end
-
---[[
     Load 
 ]]
 
 local f = CreateFrame("Frame")
 f:RegisterEvent("PLAYER_LOGIN")
-f:RegisterEvent("ADDON_LOADED")
 f:SetScript("OnEvent", function(self, event)
-    if event == "ADDON_LOADED" then
-        CreateConfigurationPanel()
-    elseif event == "PLAYER_LOGIN" then
+    if event == "PLAYER_LOGIN" then
       RegisterAutoQuestsEvents()
     end
 end)
