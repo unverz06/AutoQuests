@@ -28,11 +28,9 @@ local function RegisterAutoQuestsEvents()
       -- activeQuetes
       local nActive = C_GossipInfo.GetNumActiveQuests()
       local activeQuests = C_GossipInfo.GetActiveQuests()
-      
       -- availableQuests
       local nAvailable = C_GossipInfo.GetNumAvailableQuests()
       local availableQuests = C_GossipInfo.GetAvailableQuests()
-      
       -- specificVar
       local autoquestsQuestID
       local autoquestsIsComplete
@@ -50,7 +48,7 @@ local function RegisterAutoQuestsEvents()
             autoquestsIsComplete = activeQuests[i].isComplete
             autoquestsQuestID = activeQuests[i].questID
             if autoquestsIsComplete == true then
-              C_GossipInfo.SelectAvailableQuest(autoquestsQuestID)
+              C_GossipInfo.SelectActiveQuest(autoquestsQuestID)
             end
           end
         end
