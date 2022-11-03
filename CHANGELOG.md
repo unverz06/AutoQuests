@@ -11,6 +11,8 @@
 - Addon refactor
 - Add locale/en
 - Add locale/fr
+- Add isComplete GOSSIP_EVENT
+- Bug fix with GossipActiveQuest
 
 > Released
 ## 2.0.1
