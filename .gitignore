@@ -1,6 +1,6 @@
 # folders
-.other
 .vscode
+.other
 
 # files
 *.code-workspace
