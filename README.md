@@ -26,7 +26,3 @@ Takes and returns your quests automatically.
 - Return single quests
 - Return multiple quests
 - Return quests with the continue
-- - Abandon all quests (/aaq) #paused
-
-## API Base 
-https://wowpedia.fandom.com/wiki/World_of_Warcraft_API
