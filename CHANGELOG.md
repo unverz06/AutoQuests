@@ -2,12 +2,17 @@
 
 > Next
 ## 2.1.1
-- Add locale/fr
+- Add locale/de
+- Add locale/it
+- Add locale/...
 
+> Released
 ## 2.1.0
 - Addon refactor
 - Add locale/en
-- Add settings
+- Add locale/fr
+- Add isComplete GOSSIP_EVENT
+- Bug fix with GossipActiveQuest
 
 > Released
 ## 2.0.1
