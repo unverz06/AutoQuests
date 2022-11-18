@@ -1,12 +1,16 @@
 # AutoQuests — Changelog
 
 > Next
-## 2.1.1
+## 2.1.x
+- Add switchoff
 - Add locale/de
 - Add locale/it
 - Add locale/...
 
 > Released
+## 2.1.1
+- Update .toc interface 100002
+
 ## 2.1.0
 - Addon refactor
 - Add locale/en
