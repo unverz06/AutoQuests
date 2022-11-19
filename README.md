@@ -26,3 +26,6 @@ Takes and returns your quests automatically.
 - Return single quests
 - Return multiple quests
 - Return quests with the continue
+
+## Command : 
+- Press Shift or Ctrl or Alt for deactiave Autoquest (is reactivate on release)

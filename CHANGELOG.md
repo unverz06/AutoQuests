@@ -1,13 +1,15 @@
 # AutoQuests — Changelog
 
 > Next
-## 2.1.x
-- Add switchoff
+## 2.2.x
 - Add locale/de
 - Add locale/it
 - Add locale/...
 
 > Released
+## 2.2.0
+- Add switch off key : Press Shift or Ctrl or Alt for deactiave Autoquest (is reactivate on release)
+
 ## 2.1.1
 - Update .toc interface 100002
 
