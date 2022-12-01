@@ -38,13 +38,22 @@ local function RegisterAutoQuestsEvents()
         -- specificVar
         local autoquestsQuestID
         local autoquestsIsComplete
+        local autoquestsRepeatable
 
         if nAvailable > 0 then
           for i = 1, nAvailable do
             if type(availableQuests) == "table" then
               autoquestsQuestID = availableQuests[i].questID
-              C_GossipInfo.SelectAvailableQuest(autoquestsQuestID)
+              autoquestsRepeatable = availableQuests[i].repeatable
+              if autoquestsRepeatable == true then
+                -- nothing ... deactivate Autoquests
+              else
+                C_GossipInfo.SelectAvailableQuest(autoquestsQuestID)
+              end
             end
+          end
+          if autoquestsRepeatable == true then
+            selfMessage(L.TITLE .. player .. L.REPEATABLE);
           end
         elseif nActive > 0 then
           for i = 1, nActive do

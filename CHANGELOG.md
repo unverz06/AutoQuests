@@ -7,6 +7,9 @@
 - Add locale/...
 
 > Released
+## 2.2.1
+- Bug fix with GOSSIP_EVENT and Daily or Repeatable quests
+
 ## 2.2.0
 - Add switch off key : Press Shift or Ctrl or Alt for deactiave Autoquest (is reactivate on release)
 
