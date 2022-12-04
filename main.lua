@@ -45,7 +45,7 @@ local function RegisterAutoQuestsEvents()
             if type(availableQuests) == "table" then
               autoquestsQuestID = availableQuests[i].questID
               autoquestsRepeatable = availableQuests[i].repeatable
-              if autoquestsRepeatable == true then
+              if nAvailable >= 2 and autoquestsRepeatable == true then
                 -- nothing ... deactivate Autoquests
               else
                 C_GossipInfo.SelectAvailableQuest(autoquestsQuestID)
