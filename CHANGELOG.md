@@ -7,8 +7,11 @@
 - Add locale/...
 
 > Released
+## 2.2.2
+- Update script for repeatable quests if you have 1 (spam quest) or 2+ (deactivate Autoquests)
+
 ## 2.2.1
-- Bug fix with GOSSIP_EVENT and Daily or Repeatable quests
+- Bug fix with GOSSIP_EVENT and repeatable quests
 
 ## 2.2.0
 - Add switch off key : Press Shift or Ctrl or Alt for deactiave Autoquest (is reactivate on release)
