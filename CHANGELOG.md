@@ -13,8 +13,6 @@
 - Add locale/esES
 - Add locale/zhTW
 - Add locale/enTW
-- Add locale/enGB
-- Add locale/enUS
 
 
 > Released
@@ -22,6 +20,8 @@
 - Change locale/en > locale/default
 - Change locale/fr > locale/frFR
 - Add locale/ruRU
+- Add locale/enGB
+- Add locale/enUS
 
 ## 2.2.2
 - Update script for repeatable quests if you have 1 (spam quest) or 2+ (deactivate Autoquests)

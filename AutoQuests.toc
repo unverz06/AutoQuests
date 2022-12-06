@@ -7,7 +7,12 @@
 ## Version: 2.3.0
 ## X-Curse-Project-ID: 686482
 
+# Main app
 main.lua
+
+# Locale
 locale/default.lua
+locale/enGB.lua
+locale/enUS.lua
 locale/frFR.lua
 locale/ruRU.lua
