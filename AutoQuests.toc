@@ -4,9 +4,10 @@
 ## Title: AutoQuests |cff03befc By unverz06|r
 ## Notes: Takes and returns your quests automatically.
 ## Author: unverz
-## Version: 2.2.2
+## Version: 2.3.0
 ## X-Curse-Project-ID: 686482
 
 main.lua
-locale/en.lua
-locale/fr.lua
+locale/default.lua
+locale/frFR.lua
+locale/ruRU.lua
