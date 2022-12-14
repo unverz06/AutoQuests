@@ -22,6 +22,7 @@
 - Add locale/ruRU
 - Add locale/enGB
 - Add locale/enUS
+- Remove Classic (use version 1.0.x or spécifique 2.1.x/2.2.x)
 
 ## 2.2.2
 - Update script for repeatable quests if you have 1 (spam quest) or 2+ (deactivate Autoquests)
