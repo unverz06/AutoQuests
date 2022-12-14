@@ -1,4 +1,4 @@
-# AutoQuests — v2.2.2
+# AutoQuests — v2.3.0
 <div align="center">
   <img src="https://raw.githubusercontent.com/unverz06/AutoQuests/readme/src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>
@@ -11,7 +11,7 @@ Takes and returns your quests automatically.
   <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/Dragonflight.png" alt="logo SL" width="20%">
 </div>
 
-> Classic
+> Classic (not optmised)
 <div align="left">
   <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/Wrath.png" alt="logo SL" width="20%">
 </div>

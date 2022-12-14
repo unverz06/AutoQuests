@@ -1,12 +1,16 @@
 ## Interface: 100002
-## Interface-WOTLKC: 30400
-## Interface-Classic: 11403
 ## Title: AutoQuests |cff03befc By unverz06|r
 ## Notes: Takes and returns your quests automatically.
 ## Author: unverz
-## Version: 2.2.2
+## Version: 2.3.0
 ## X-Curse-Project-ID: 686482
 
+# Main app
 main.lua
-locale/en.lua
-locale/fr.lua
+
+# Locale
+locale/default.lua
+locale/enGB.lua
+locale/enUS.lua
+locale/frFR.lua
+locale/ruRU.lua

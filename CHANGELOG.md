@@ -1,12 +1,29 @@
 # AutoQuests — Changelog
 
 > Next
-## 2.2.x
-- Add locale/de
-- Add locale/it
-- Add locale/...
+## 2.3.1
+- Add locale/ptBR
+- Add locale/zhCN
+- Add locale/enCN
+- Add locale/deDE
+- Add locale/itIT
+- Add locale/esMX
+- Add locale/ptPT
+- Add locale/koKR
+- Add locale/esES
+- Add locale/zhTW
+- Add locale/enTW
+
 
 > Released
+## 2.3.0
+- Change locale/en > locale/default
+- Change locale/fr > locale/frFR
+- Add locale/ruRU
+- Add locale/enGB
+- Add locale/enUS
+- Remove Classic (use version 1.0.x or spécifique 2.1.x/2.2.x)
+
 ## 2.2.2
 - Update script for repeatable quests if you have 1 (spam quest) or 2+ (deactivate Autoquests)
 
