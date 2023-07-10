@@ -1,10 +1,10 @@
-## Interface: 100100
+## Interface: 100105
 # /run print((select(4, GetBuildInfo())))
 
 ## Title: AutoQuests |cff03befc By unverz06|r
 ## Notes: Takes and returns your quests automatically.
 ## Author: unverz
-## Version: 2.3.1
+## Version: 2.3.2
 ## X-Curse-Project-ID: 686482
 
 # Main app
