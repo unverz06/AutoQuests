@@ -16,6 +16,9 @@
 
 
 > Released
+## 2.4.0
+- Add command slash "/autoquest on/off" "/aq on/off" for deactiave/activate Autoquests (author bsmorgan)
+
 ## 2.3.3
 - Update version
 
@@ -40,7 +43,7 @@
 - Bug fix with GOSSIP_EVENT and repeatable quests
 
 ## 2.2.0
-- Add switch off key : Press Shift or Ctrl or Alt for deactiave Autoquest (is reactivate on release)
+- Add switch off key : Press Shift or Ctrl or Alt for deactiave Autoquests (is reactivate on release)
 
 ## 2.1.1
 - Update .toc interface 100002
