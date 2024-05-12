@@ -7,14 +7,7 @@ Takes and returns your quests automatically.
 
 ## Compatibility :
 > Retail
-<div align="left">
-  <img src="https://warcraft.wiki.gg/images/c/cf/Dragonflight_logo.png" alt="logo SL" width="20%">
-</div>
-
 > Classic
-<div align="left">
-  <img src="https://warcraft.wiki.gg/images/7/78/WoW_Cataclysm_Classic_logo.png" alt="logo LK" width="20%">
-</div>
 
 ## Use cases :
 - Taking single quests
