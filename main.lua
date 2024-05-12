@@ -20,15 +20,16 @@ end
 ]]
 
 local function RegisterAutoQuestsEvents()
-
+  L.status = true
+  selfMessage(L.TITLE .. L.ENABLE)
   local function Autoquests(self, event, key, down, ...)
 
-    if IsShiftKeyDown() or IsControlKeyDown() or IsAltKeyDown() then
-      -- nothing ... deactivate Autoquests
+    if L.status == false or IsShiftKeyDown() or IsControlKeyDown() or IsAltKeyDown() then
+      -- nothing ... Disabled Autoquests
     else
     
       if (event=="GOSSIP_SHOW") then
-        
+
         -- activeQuetes
         local nActive = C_GossipInfo.GetNumActiveQuests()
         local activeQuests = C_GossipInfo.GetActiveQuests()
@@ -66,7 +67,6 @@ local function RegisterAutoQuestsEvents()
             end
           end
         end
-
       end
     
       if (event=="QUEST_GREETING") then
@@ -101,9 +101,7 @@ local function RegisterAutoQuestsEvents()
           GetQuestReward(default)
         end
       end
-
     end
-
   end
 
   local f = CreateFrame("Frame")
@@ -119,6 +117,33 @@ end
 --[[
     Load 
 ]]
+
+SLASH_AUTOQUEST1 = "/autoquest";
+SLASH_AUTOQUEST2 = "/aq";
+
+SlashCmdList["AUTOQUEST"] = function(msg)
+  msg = string.lower(msg)
+  --	selfMessage(L.TITLE .. msg)
+	msg = { string.split(" ", msg) }
+	local exec
+	if #msg >= 1 then
+	  exec = table.remove(msg, 1)
+	end
+	if exec == "on" then
+		L.status = true
+		selfMessage(L.TITLE .. L.ENABLE)
+	elseif exec == "off" then
+		L.status = false
+		selfMessage(L.TITLE .. L.DISABLE)
+	else
+    if L.status == true then
+      L.statusReturn = L.ENABLE
+    else
+      L.statusReturn = L.DISABLE
+    end
+		selfMessage(L.TITLE .. L.STATE .. L.statusReturn)
+	end
+end
 
 local f = CreateFrame("Frame")
 f:RegisterEvent("PLAYER_LOGIN")

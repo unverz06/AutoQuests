@@ -1,9 +1,10 @@
 ## Interface: 100207
 
 ## Title: AutoQuests |cff03befc unverz06|r
+## IconTexture: Interface\AddOns\AutoQuests\Icons\AutoQuests.tga
 ## Notes: Takes and returns your quests automatically.
-## Author: unverz
-## Version: 2.3.3
+## Author: unverz, bsmorgan
+## Version: 2.4.0
 ## X-Curse-Project-ID: 686482
 
 # Main app

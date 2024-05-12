@@ -6,5 +6,8 @@ if GetLocale() == "frFR" then
   L.REWARD = ", Choisissez votre récompense et terminez votre quête."
   L.REPEATABLE = ", Choisissez votre quête journalière."
   L.BACK = "\n"
+  L.ENABLE = "Activé"
+  L.DISABLE = "Désactivé"
+  L.STATE = "Le status est "
 
 end

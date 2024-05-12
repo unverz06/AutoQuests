@@ -1,4 +1,4 @@
-# AutoQuests — v2.3.3
+# AutoQuests — v2.4.0
 <div align="center">
   <img src="https://raw.githubusercontent.com/unverz06/AutoQuests/readme/src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>
@@ -6,18 +6,8 @@
 Takes and returns your quests automatically.
 
 ## Compatibility :
-> Retail
-<div align="left">
-  <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/Dragonflight.png" alt="logo SL" width="20%">
-</div>
-
-> Classic (not optmised use old version)
-<div align="left">
-  <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/Wrath.png" alt="logo LK" width="20%">
-</div>
-<div align="left">
-  <img src="https://raw.githubusercontent.com/unverz06/AutoQuest/readme/src/WoW.png" alt="logo R" width="20%">
-</div>
+- Retail
+- Classic
 
 ## Use cases :
 - Taking single quests
@@ -28,4 +18,7 @@ Takes and returns your quests automatically.
 - Return quests with the continue
 
 ## Command : 
-- Press Shift or Ctrl or Alt for deactiave Autoquest (is reactivate on release)
+- Press Shift or Ctrl or Alt for deactivate Autoquest (is reactivate on release)
+- ```/autoquest off``` or ```/aq off``` for deactivate Autoquests
+- ```/autoquest on``` or ```/aq on```  for reactivate Autoquests
+- ```/autoquest``` or ```/aq``` for Autoquest status
