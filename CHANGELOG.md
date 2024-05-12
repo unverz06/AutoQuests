@@ -1,7 +1,7 @@
 # AutoQuests — Changelog
 
 > Next
-## 2.3.3
+## x.x.x
 - Add locale/ptBR
 - Add locale/zhCN
 - Add locale/enCN
@@ -16,6 +16,9 @@
 
 
 > Released
+## 2.3.3
+- Update version
+
 ## 2.3.2
 - Update version
 
