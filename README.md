@@ -6,9 +6,8 @@
 Takes and returns your quests automatically.
 
 ## Compatibility :
-> Retail
-
-> Classic
+- Retail
+- Classic
 
 ## Use cases :
 - Taking single quests
