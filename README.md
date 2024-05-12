@@ -19,6 +19,6 @@ Takes and returns your quests automatically.
 
 ## Command : 
 - Press Shift or Ctrl or Alt for deactivate Autoquest (is reactivate on release)
-- /autoquest off (/aq off) for deactivate Autoquests
-- /autoquest on (/aq on) for reactivate Autoquests
-- /autoquest (/aq) for Autoquest status
+- ```/autoquest off``` or ```/aq off``` for deactivate Autoquests
+- ```/autoquest on``` or ```/aq on```  for reactivate Autoquests
+- ```/autoquest``` or ```/aq``` for Autoquest status
