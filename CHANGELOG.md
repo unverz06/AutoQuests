@@ -16,6 +16,10 @@
 
 
 > Released
+## 2.4.1
+- Add "## Contributions & Thanks" to readme.md
+- Update version
+
 ## 2.4.0
 - Add command slash "/autoquest on/off" "/aq on/off" for deactiave/activate Autoquests (author bsmorgan)
 
