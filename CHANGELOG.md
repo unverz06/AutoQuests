@@ -16,6 +16,9 @@
 
 
 > Released
+## 2.4.2
+- Update version
+
 ## 2.4.1
 - Add "## Contributions & Thanks" to readme.md
 - Update version
