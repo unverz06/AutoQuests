@@ -1,4 +1,4 @@
-# AutoQuests — v2.4.0
+# AutoQuests — v2.4.1
 <div align="center">
   <img src="https://raw.githubusercontent.com/unverz06/AutoQuests/readme/src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>
@@ -22,3 +22,9 @@ Takes and returns your quests automatically.
 - ```/autoquest off``` or ```/aq off``` for deactivate Autoquests
 - ```/autoquest on``` or ```/aq on```  for reactivate Autoquests
 - ```/autoquest``` or ```/aq``` for Autoquest status
+
+## Contributions & Thanks
+- Developer : Bsmorgan
+- Translation : Aspatik
+- Testing : Aspatik
+- Financial : Jay Panchal
