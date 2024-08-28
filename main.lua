@@ -45,13 +45,11 @@ local function RegisterAutoQuestsEvents()
 
         --[[ Gossip event with the flag "💬(quest)" ]]
         if nOptions > 0 then
-          for i = 1, nOptions do
-            local options = C_GossipInfo.GetOptions()
-            if options[i].flags == 1 then -- If it's a conversation with a quest 
-              C_GossipInfo.SelectOption(options[i].gossipOptionID)
-            else
-              -- Nothing ... just reading the conversation
-            end
+          local options = C_GossipInfo.GetOptions()
+          if options[1].flags == 1 then -- If it's a conversation with a quest (always choose the first one)
+            C_GossipInfo.SelectOption(options[1].gossipOptionID)
+          else
+            -- Nothing ... just reading the conversation
           end
         end
 
