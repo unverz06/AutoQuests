@@ -25,29 +25,44 @@ local function RegisterAutoQuestsEvents()
   local function Autoquests(self, event, key, down, ...)
 
     if L.status == false or IsShiftKeyDown() or IsControlKeyDown() or IsAltKeyDown() then
-      -- nothing ... Disabled Autoquests
+      -- Nothing ... Disabled Autoquests
     else
     
       if (event=="GOSSIP_SHOW") then
 
-        -- activeQuetes
+        -- GetactiveQuetes
         local nActive = C_GossipInfo.GetNumActiveQuests()
         local activeQuests = C_GossipInfo.GetActiveQuests()
-        -- availableQuests
+        -- GetavailableQuests
         local nAvailable = C_GossipInfo.GetNumAvailableQuests()
         local availableQuests = C_GossipInfo.GetAvailableQuests()
+        -- GetOptions
+        local nOptions = #C_GossipInfo.GetOptions()
         -- specificVar
         local autoquestsQuestID
         local autoquestsIsComplete
         local autoquestsRepeatable
 
+        --[[ Gossip event with the flag "💬(quest)" ]]
+        if nOptions > 0 then
+          for i = 1, nOptions do
+            local options = C_GossipInfo.GetOptions()
+            if options[i].flags == 1 then -- If it's a conversation with a quest 
+              C_GossipInfo.SelectOption(options[i].gossipOptionID)
+            else
+              -- Nothing ... just reading the conversation
+            end
+          end
+        end
+
+        --[[ Gossip event with real quest "?!" ]]
         if nAvailable > 0 then
           for i = 1, nAvailable do
             if type(availableQuests) == "table" then
               autoquestsQuestID = availableQuests[i].questID
               autoquestsRepeatable = availableQuests[i].repeatable
               if nAvailable >= 2 and autoquestsRepeatable == true then
-                -- nothing ... deactivate Autoquests
+                -- Nothing ... 
               else
                 C_GossipInfo.SelectAvailableQuest(autoquestsQuestID)
               end
