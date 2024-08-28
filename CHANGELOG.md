@@ -16,6 +16,9 @@
 
 
 > Released
+## 2.5.0
+- Taking a quest in a chat window with an NPC (quests with gossip flag)
+
 ## 2.4.2
 - Update version
 

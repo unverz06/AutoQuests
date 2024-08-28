@@ -1,4 +1,4 @@
-# AutoQuests — v2.4.2
+# AutoQuests — v2.5.0
 <div align="center">
   <img src="https://raw.githubusercontent.com/unverz06/AutoQuests/readme/src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>
@@ -12,7 +12,7 @@ Takes and returns your quests automatically.
 ## Use cases :
 - Taking single quests
 - Taking multiple quests
-- Taking a quest in a chat window with an NPC
+- Taking a quest in a chat window with an NPC (classic quests and gossip)
 - Return single quests
 - Return multiple quests
 - Return quests with the continue
