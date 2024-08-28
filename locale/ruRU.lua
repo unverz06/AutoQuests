@@ -9,5 +9,6 @@ if GetLocale() == "ruRU" then
   L.ENABLE = "включить"
   L.DISABLE = "отключить"
   L.STATE = "государство "
+  L.GOSSIP = ", выберите свой диалог."
 
 end

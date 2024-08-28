@@ -38,20 +38,33 @@ local function RegisterAutoQuestsEvents()
         local availableQuests = C_GossipInfo.GetAvailableQuests()
         -- GetOptions
         local nOptions = #C_GossipInfo.GetOptions()
+        local options = C_GossipInfo.GetOptions()
         -- specificVar
-        local autoquestsQuestID
-        local autoquestsIsComplete
-        local autoquestsRepeatable
+        local autoquestsQuestID = 0
+        local autoquestsIsComplete = 0
+        local autoquestsRepeatable = false
+        local autoquestsOptions = 0
 
         --[[ Gossip event with the flag "💬(quest)" ]]
-        if nOptions > 0 then
+        if nOptions == 1 then
+          -- local options = C_GossipInfo.GetOptions()
+          if options[1].flags == 1 then -- If it's a conversation with a quest (always choose the first one)
+            C_GossipInfo.SelectOption(options[1].gossipOptionID)
+          else
+            -- Nothing ... just reading the conversation
+          end
+        end
+        if nOptions > 1 then
           for i = 1, nOptions do
-            local options = C_GossipInfo.GetOptions()
-            if options[i].flags == 1 then -- If it's a conversation with a quest 
-              C_GossipInfo.SelectOption(options[i].gossipOptionID)
-            else
-              -- Nothing ... just reading the conversation
+            if options[i].flags == 1 then -- If it's a conversation with a quest (always choose the first one)
+              autoquestsOptions = autoquestsOptions + 1;
             end
+          end
+          if autoquestsOptions > 1 then
+            selfMessage(L.TITLE .. player .. L.GOSSIP);
+            PlaySound(5274, "master")
+          else
+            -- Nothing ... just reading the conversation
           end
         end
 

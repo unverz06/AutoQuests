@@ -9,5 +9,6 @@ if GetLocale() == "enGB" then
   L.ENABLE = "Enable"
   L.DISABLE = "Disabled"
   L.STATE = "State is "
+  L.GOSSIP = ", Choose your dialogue."
 
 end
