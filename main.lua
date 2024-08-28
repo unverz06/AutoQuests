@@ -44,13 +44,17 @@ local function RegisterAutoQuestsEvents()
         local autoquestsRepeatable
 
         --[[ Gossip event with the flag "💬(quest)" ]]
-        if nOptions > 0 then
+        if nOptions == 1 then
           local options = C_GossipInfo.GetOptions()
           if options[1].flags == 1 then -- If it's a conversation with a quest (always choose the first one)
             C_GossipInfo.SelectOption(options[1].gossipOptionID)
           else
             -- Nothing ... just reading the conversation
           end
+        end
+        if nOptions > 1 then
+          selfMessage(L.TITLE .. player .. L.GOSSIP);
+          PlaySound(5274, "master")
         end
 
         --[[ Gossip event with real quest "?!" ]]
