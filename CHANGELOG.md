@@ -16,6 +16,11 @@
 
 
 > Released
+## 2.5.1
+- Add new check if gossip event is flaged quest, conv or bag
+- Fix if gossif quest have 2 or more possible select
+- Add new Message if you need to choose a gossip
+
 ## 2.5.0
 - Taking a quest in a chat window with an NPC (quests with gossip flag)
 
