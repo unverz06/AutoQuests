@@ -4,6 +4,7 @@
 
 # files
 *.code-workspace
+*.sh
 
 # Compiled Lua sources
 luac.out
