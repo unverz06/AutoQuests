@@ -16,6 +16,9 @@
 
 
 > Released
+## 2.5.2
+- Code refactor
+
 ## 2.5.1
 - Add new check if gossip event is flaged quest, conv or bag
 - Fix if gossif quest have 2 or more possible select
