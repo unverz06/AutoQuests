@@ -4,7 +4,7 @@
 ## IconTexture: Interface\AddOns\AutoQuests\Icons\AutoQuests.tga
 ## Notes: Takes and returns your quests automatically.
 ## Author: unverz06
-## Version: 2.5.1
+## Version: 2.5.2
 ## X-Curse-Project-ID: 686482
 ## X-Wago-ID: 5NRejvG3
 
