@@ -9,14 +9,14 @@ local defaultRewardIndex = 1
 --[[ 
     Fonction d'affichage de message 
 ]]
-local function printMessage(message)
+function printMessage(message)
     DEFAULT_CHAT_FRAME:AddMessage(message, 1.0, 1.0, 0.0)
 end
 
 --[[ 
     Fonction principale pour gérer les événements liés aux quêtes 
 ]]
-local function AutoQuestsHandler(self, event, ...)
+function AutoQuestsHandler(self, event, ...)
     if not L.status or IsShiftKeyDown() or IsControlKeyDown() or IsAltKeyDown() then
         return -- AutoQuests est désactivé ou une touche de modification est enfoncée
     end
@@ -37,7 +37,7 @@ end
 --[[ 
     Fonction pour gérer l'événement GOSSIP_SHOW
 ]]
-local function HandleGossipShow()
+function HandleGossipShow()
     local nActive = C_GossipInfo.GetNumActiveQuests()
     local activeQuests = C_GossipInfo.GetActiveQuests()
     local nAvailable = C_GossipInfo.GetNumAvailableQuests()
@@ -82,7 +82,7 @@ end
 --[[ 
     Fonction pour gérer l'événement QUEST_GREETING 
 ]]
-local function HandleQuestGreeting()
+function HandleQuestGreeting()
     local availableQuestsCount = GetNumAvailableQuests()
     local activeQuestsCount = GetNumActiveQuests()
 
@@ -100,7 +100,7 @@ end
 --[[ 
     Fonction pour gérer l'événement QUEST_COMPLETE 
 ]]
-local function HandleQuestCompletion()
+function HandleQuestCompletion()
     local rewardCount = GetNumQuestChoices()
     if rewardCount > 1 then
         printMessage(L.TITLE .. playerName .. L.REWARD)
@@ -113,7 +113,7 @@ end
 --[[ 
     Enregistrement des événements de quêtes 
 ]]
-local function RegisterAutoQuestsEvents()
+function RegisterAutoQuestsEvents()
     L.status = true
     printMessage(L.TITLE .. L.ENABLE)
 
@@ -151,7 +151,7 @@ end
 --[[ 
     Gestionnaire de l'événement de connexion du joueur 
 ]]
-local loginFrame = CreateFrame("Frame")
+loginFrame = CreateFrame("Frame")
 loginFrame:RegisterEvent("PLAYER_LOGIN")
 loginFrame:SetScript("OnEvent", function(self, event)
     if event == "PLAYER_LOGIN" then
