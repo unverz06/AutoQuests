@@ -1,4 +1,4 @@
-# AutoQuests — v2.5.2
+# AutoQuests — v2.5.3
 <div align="center">
   <img src="https://raw.githubusercontent.com/unverz06/AutoQuests/readme/src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>

@@ -2,20 +2,21 @@
 
 > Next
 ## x.x.x
-- Add locale/ptBR
-- Add locale/zhCN
-- Add locale/enCN
-- Add locale/deDE
-- Add locale/itIT
-- Add locale/esMX
-- Add locale/ptPT
-- Add locale/koKR
-- Add locale/esES
-- Add locale/zhTW
-- Add locale/enTW
-
 
 > Released
+## 2.5.3
+- Add locale/ptBR.lua 
+- Add locale/zhCN.lua
+- Add locale/enCN.lua
+- Add locale/deDE.lua
+- Add locale/itIT.lua
+- Add locale/esMX.lua
+- Add locale/ptPT.lua
+- Add locale/koKR.lua
+- Add locale/esES.lua
+- Add locale/zhTW.lua
+- Add locale/enTW.lua
+
 ## 2.5.2
 - Code refactor
 
