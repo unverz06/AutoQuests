@@ -4,6 +4,9 @@
 ## x.x.x
 
 > Released
+## 2.6.0
+- Auto-select first repeatable quest when multiple are available in gossip
+
 ## 2.5.4
 - Update interface version to 120000 for WoW 12.0.0 Midnight pre-patch compatibility
 
