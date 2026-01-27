@@ -1,4 +1,4 @@
-# AutoQuests — v2.5.3
+# AutoQuests — v2.5.4
 <div align="center">
   <img src="https://raw.githubusercontent.com/unverz06/AutoQuests/readme/src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>
@@ -17,7 +17,7 @@ Takes and returns your quests automatically.
 - Return multiple quests
 - Return quests with the continue
 
-## Command : 
+## Command :
 - Press Shift or Ctrl or Alt for deactivate Autoquest (is reactivate on release)
 - ```/autoquest off``` or ```/aq off``` for deactivate Autoquests
 - ```/autoquest on``` or ```/aq on```  for reactivate Autoquests
