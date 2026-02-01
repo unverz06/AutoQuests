@@ -4,8 +4,11 @@
 ## x.x.x
 
 > Released
+## 2.5.4
+- Update interface version to 120000 for WoW 12.0.0 Midnight pre-patch compatibility
+
 ## 2.5.3
-- Add locale/ptBR.lua 
+- Add locale/ptBR.lua
 - Add locale/zhCN.lua
 - Add locale/enCN.lua
 - Add locale/deDE.lua
