@@ -1,20 +1,20 @@
---[[ 
-    Importation de la table de localisation 
+--[[
+    Importation de la table de localisation
 ]]
 local _, L = ...
 
 local playerName = UnitName("player")
 local defaultRewardIndex = 1
 
---[[ 
-    Fonction d'affichage de message 
+--[[
+    Fonction d'affichage de message
 ]]
 function printMessage(message)
     DEFAULT_CHAT_FRAME:AddMessage(message, 1.0, 1.0, 0.0)
 end
 
---[[ 
-    Fonction principale pour gérer les événements liés aux quêtes 
+--[[
+    Fonction principale pour gérer les événements liés aux quêtes
 ]]
 function AutoQuestsHandler(self, event, ...)
     if not L.status or IsShiftKeyDown() or IsControlKeyDown() or IsAltKeyDown() then
@@ -34,7 +34,7 @@ function AutoQuestsHandler(self, event, ...)
     end
 end
 
---[[ 
+--[[
     Fonction pour gérer l'événement GOSSIP_SHOW
 ]]
 function HandleGossipShow()
@@ -48,14 +48,21 @@ function HandleGossipShow()
         C_GossipInfo.SelectOption(gossipOptions[1].gossipOptionID)
     else
         local questOptionsCount = 0
+        local firstQuestOption = nil
         for _, option in ipairs(gossipOptions) do
             if option.flags == 1 then
                 questOptionsCount = questOptionsCount + 1
+                if firstQuestOption == nil then
+                    firstQuestOption = option
+                end
             end
         end
         if questOptionsCount > 1 then
             printMessage(L.TITLE .. playerName .. L.GOSSIP)
             PlaySound(5274, "master")
+            if firstQuestOption then
+                C_GossipInfo.SelectOption(firstQuestOption.gossipOptionID)
+            end
         elseif questOptionsCount == 1 then
             C_GossipInfo.SelectOption(gossipOptions[1].gossipOptionID)
         end
@@ -67,8 +74,10 @@ function HandleGossipShow()
                 C_GossipInfo.SelectAvailableQuest(quest.questID)
             end
         end
-        if availableQuests[1].repeatable then
-            printMessage(L.TITLE .. playerName .. L.REPEATABLE)
+        if availableQuests[1] then
+            if availableQuests[1].repeatable and nAvailable > 1 then
+                C_GossipInfo.SelectAvailableQuest(availableQuests[1].questID)
+            end
         end
     elseif nActive > 0 then
         for i, quest in ipairs(activeQuests) do
@@ -79,8 +88,8 @@ function HandleGossipShow()
     end
 end
 
---[[ 
-    Fonction pour gérer l'événement QUEST_GREETING 
+--[[
+    Fonction pour gérer l'événement QUEST_GREETING
 ]]
 function HandleQuestGreeting()
     local availableQuestsCount = GetNumAvailableQuests()
@@ -97,8 +106,8 @@ function HandleQuestGreeting()
     end
 end
 
---[[ 
-    Fonction pour gérer l'événement QUEST_COMPLETE 
+--[[
+    Fonction pour gérer l'événement QUEST_COMPLETE
 ]]
 function HandleQuestCompletion()
     local rewardCount = GetNumQuestChoices()
@@ -110,8 +119,8 @@ function HandleQuestCompletion()
     end
 end
 
---[[ 
-    Enregistrement des événements de quêtes 
+--[[
+    Enregistrement des événements de quêtes
 ]]
 function RegisterAutoQuestsEvents()
     L.status = true
@@ -126,8 +135,8 @@ function RegisterAutoQuestsEvents()
     frame:SetScript("OnEvent", AutoQuestsHandler)
 end
 
---[[ 
-    Commandes slash pour activer/désactiver l'addon 
+--[[
+    Commandes slash pour activer/désactiver l'addon
 ]]
 SLASH_AUTOQUEST1 = "/autoquest"
 SLASH_AUTOQUEST2 = "/aq"
@@ -148,8 +157,8 @@ SlashCmdList["AUTOQUEST"] = function(msg)
     end
 end
 
---[[ 
-    Gestionnaire de l'événement de connexion du joueur 
+--[[
+    Gestionnaire de l'événement de connexion du joueur
 ]]
 loginFrame = CreateFrame("Frame")
 loginFrame:RegisterEvent("PLAYER_LOGIN")
