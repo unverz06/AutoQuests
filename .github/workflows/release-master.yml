@@ -4,33 +4,72 @@ on:
   push:
     branches:
       - master
+    paths:
+      - AutoQuests.toc
+      - CHANGELOG.md
+  workflow_dispatch:
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
 
 jobs:
   create_release:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Get version from README
-      id: get_version
-      run: |
-        first_line=$(head -n 1 README.md)
-        version=$(echo $first_line | grep -oP '(?<=—\s)v[0-9]+\.[0-9]+\.[0-9]+')
-        if [ -z "$version" ]; then
-          echo "Version non trouvée dans README.md"
-          exit 1
-        fi
-        clean_version=$(echo $version | sed 's/^v//')
-        echo "version=${clean_version}" >> $GITHUB_ENV
+      - name: Get version from TOC
+        id: version
+        run: |
+          version=$(sed -nE 's/^## Version:[[:space:]]*([0-9]+\.[0-9]+\.[0-9]+)[[:space:]]*$/\1/p' AutoQuests.toc | head -n 1)
+          if [ -z "$version" ]; then
+            echo "::error::Version not found in AutoQuests.toc"
+            exit 1
+          fi
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
 
-    - name: Create Release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ env.version }}
-        release_name: ${{ env.version }}
-        draft: false
-        prerelease: false
+      - name: Check if release already exists
+        id: exists
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          if gh release view "$VERSION" >/dev/null 2>&1; then
+            echo "Release $VERSION already exists, skipping."
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Extract release notes from CHANGELOG
+        if: steps.exists.outputs.exists == 'false'
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          awk -v v="$VERSION" '
+            $0 == "## " v { found = 1; next }
+            /^## /        { found = 0 }
+            found
+          ' CHANGELOG.md > release_notes.md
+          if [ ! -s release_notes.md ]; then
+            echo "::warning::No CHANGELOG entry found for $VERSION"
+            echo "Release $VERSION" > release_notes.md
+          fi
+
+      - name: Create Release
+        if: steps.exists.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          gh release create "$VERSION" \
+            --target "$GITHUB_SHA" \
+            --title "$VERSION" \
+            --notes-file release_notes.md
