@@ -1,36 +1,57 @@
-# AutoQuests — v3.0.0
 <div align="center">
   <img src="https://raw.githubusercontent.com/unverz06/AutoQuests/readme/src/AutoQuest_banner.jpg" alt="banner" width="100%">
 </div>
-<br>
-Takes and returns your quests automatically.
 
-## Compatibility :
-- Retail
-- Classic
+<div align="center">
 
-## Use cases :
-- Taking single quests
-- Taking multiple quests
-- Taking a quest in a chat window with an NPC (classic quests and gossip)
-- Return single quests
-- Return multiple quests
-- Return quests with the continue
+  <a href="https://github.com/unverz06/AutoQuests/releases/latest"><img src="https://img.shields.io/github/v/release/unverz06/AutoQuests?style=for-the-badge&logo=github&label=Release" alt="Latest release"></a>
+  <a href="https://www.curseforge.com/wow/addons/autoquests-unverz"><img src="https://img.shields.io/curseforge/dt/686482?style=for-the-badge&logo=curseforge&label=CurseForge" alt="CurseForge downloads"></a>
+  <a href="https://github.com/unverz06/AutoQuests/releases"><img src="https://img.shields.io/github/downloads/unverz06/AutoQuests/total?style=for-the-badge&logo=github&label=Downloads" alt="Downloads"></a>
 
-## Command :
-- Press Shift or Ctrl or Alt for deactivate Autoquest (is reactivate on release)
-- ```/autoquest off``` or ```/aq off``` for deactivate Autoquests
-- ```/autoquest on``` or ```/aq on```  for reactivate Autoquests
-- ```/autoquest``` or ```/aq``` for Autoquest status
+  **Takes and returns your quests automatically.**
 
-## Contributions & Thanks :
-- Developer : Bsmorgan, Fiote
-- Translation : Aspatik
-- Testing : Aspatik
-- Financial : Jay Panchal
+</div>
 
-## How to download :
-- Curse Forge : https://www.curseforge.com/wow/addons/autoquests-unverz
-- Wago : https://addons.wago.io/addons/autoquests
-- Github : https://github.com/unverz06/AutoQuests/releases (Latest zip)
-- Wowup (via CurseForce/Wago)
+---
+
+## Compatibility
+
+| Version | Interface | Supported |
+|---------|-----------|:---------:|
+| ![Retail](https://img.shields.io/badge/-Retail-c79c6e?style=flat-square) | `120105` (12.1.5) | ✅ |
+| ![Forever](https://img.shields.io/badge/-Forever-2e9bd6?style=flat-square) | `16001` | ✅ |
+
+## Use cases
+
+| | |
+|---|---|
+| 📥 **Accept** | Single quests, multiple quests, quests from an NPC chat window (classic quests and gossip) |
+| 📤 **Turn in** | Single quests, multiple quests, quests with the continue button |
+
+## Commands
+
+| Command | Action |
+|---------|--------|
+| `/autoquest` or `/aq` | Show AutoQuests status |
+| `/autoquest on` or `/aq on` | Reactivate AutoQuests |
+| `/autoquest off` or `/aq off` | Deactivate AutoQuests |
+
+> **Tip:** hold **Shift**, **Ctrl** or **Alt** to temporarily deactivate AutoQuests. It is reactivated on release.
+
+## Contributions & Thanks
+
+| Role | Who |
+|------|-----|
+| Developer | Bsmorgan, Fiote |
+| Translation | Aspatik |
+| Testing | Aspatik |
+| Financial | Jay Panchal |
+
+## How to download
+
+[![CurseForge](https://img.shields.io/badge/CurseForge-F16436?style=for-the-badge&logo=curseforge&logoColor=white)](https://www.curseforge.com/wow/addons/autoquests-unverz)
+[![Wago](https://img.shields.io/badge/Wago-C1272D?style=for-the-badge)](https://addons.wago.io/addons/autoquests)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/unverz06/AutoQuests/releases)
+
+- **CurseForge** / **Wago**: also available through WowUp
+- **GitHub**: download the latest zip from the releases page
