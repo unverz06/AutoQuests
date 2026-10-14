@@ -1,4 +1,4 @@
-## Interface: 120000
+## Interface: 120105, 16001
 
 ## Title: AutoQuests |cfffc4103 v3.0.0|r |cff03befc unverz06|r
 ## IconTexture: Interface\AddOns\AutoQuests\Icons\AutoQuests.tga
