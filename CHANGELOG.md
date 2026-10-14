@@ -4,6 +4,9 @@
 ## x.x.x
 
 > Released
+## 3.0.0
+- Add WoW: Forever support (Interface 16001) and update retail to 12.1.5 (120105)
+
 ## 2.6.0
 - Auto-select first repeatable quest when multiple are available in gossip
 
