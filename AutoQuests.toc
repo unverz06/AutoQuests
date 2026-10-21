@@ -1,4 +1,5 @@
 ## Interface: 120105, 16001
+##OptionalDeps: spoken
 
 ## Title: AutoQuests |cfffc4103 v3.0.1|r |cff03befc unverz06|r
 ## IconTexture: Interface\AddOns\AutoQuests\Icons\AutoQuests.tga
@@ -7,6 +8,17 @@
 ## Version: 3.0.1
 ## X-Curse-Project-ID: 686482
 ## X-Wago-ID: 5NRejvG3
+## Category: Quests
+## Category-deDE: Quests
+## Category-esES: Misiones
+## Category-esMX: Misiones
+## Category-frFR: Quêtes
+## Category-itIT: Missioni
+## Category-koKR: 퀘스트
+## Category-ptBR: Missões
+## Category-ruRU: Задания
+## Category-zhCN: 任务
+## Category-zhTW: 任務
 
 # Main app
 main.lua
