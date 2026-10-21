@@ -1,11 +1,11 @@
 ## Interface: 120105, 16001
 ##OptionalDeps: spoken
 
-## Title: AutoQuests |cfffc4103 v3.0.1|r |cff03befc unverz06|r
+## Title: AutoQuests |cfffc4103 v3.0.2|r |cff03befc unverz06|r
 ## IconTexture: Interface\AddOns\AutoQuests\Icons\AutoQuests.tga
 ## Notes: Takes and returns your quests automatically.
 ## Author: unverz06
-## Version: 3.0.1
+## Version: 3.0.2
 ## X-Curse-Project-ID: 686482
 ## X-Wago-ID: 5NRejvG3
 ## Category: Quests

@@ -4,6 +4,9 @@
 ## x.x.x
 
 > Released
+## 3.0.2
+- Fix Category Quests addon interface
+
 ## 3.0.1
 - Fix Github CICD
 
