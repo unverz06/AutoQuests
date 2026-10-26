@@ -1,23 +1,68 @@
 --[[
     Importation de la table de localisation
 ]]
-local _, L = ...
+local ADDON_NAME, L = ...
 
 local playerName = UnitName("player")
 local defaultRewardIndex = 1
 
+local HandleGossipShow, HandleQuestGreeting, HandleQuestCompletion
+
+--[[
+    Réglages par défaut (fusionnés avec AutoQuestsDB au chargement)
+]]
+L.defaults = {
+    enabled = true,
+    gps = false,
+}
+
 --[[
     Fonction d'affichage de message
 ]]
-function printMessage(message)
+local function printMessage(message)
     DEFAULT_CHAT_FRAME:AddMessage(message, 1.0, 1.0, 0.0)
+end
+L.printMessage = printMessage
+
+--[[
+    Initialisation de la base de données persistante
+]]
+local function InitDB()
+    AutoQuestsDB = AutoQuestsDB or {}
+    for key, value in pairs(L.defaults) do
+        if AutoQuestsDB[key] == nil then
+            AutoQuestsDB[key] = value
+        end
+    end
+    L.db = AutoQuestsDB
+end
+
+--[[
+    Active/désactive l'addon (panneau d'options synchronisé si présent)
+]]
+function L.SetEnabled(value)
+    value = value and true or false
+    local setting = L.settings and L.settings.enabled
+    if setting then
+        if setting:GetValue() ~= value then
+            setting:SetValue(value) -- le callback du panneau affiche le message
+            return
+        end
+    else
+        L.db.enabled = value
+    end
+    L.PrintStatus()
+end
+
+function L.PrintStatus()
+    printMessage(L.TITLE .. (L.db.enabled and L.ENABLE or L.DISABLE))
 end
 
 --[[
     Fonction principale pour gérer les événements liés aux quêtes
 ]]
-function AutoQuestsHandler(self, event, ...)
-    if not L.status or IsShiftKeyDown() or IsControlKeyDown() or IsAltKeyDown() then
+local function AutoQuestsHandler(self, event, ...)
+    if not L.db or not L.db.enabled or IsShiftKeyDown() or IsControlKeyDown() or IsAltKeyDown() then
         return -- AutoQuests est désactivé ou une touche de modification est enfoncée
     end
 
@@ -122,9 +167,8 @@ end
 --[[
     Enregistrement des événements de quêtes
 ]]
-function RegisterAutoQuestsEvents()
-    L.status = true
-    printMessage(L.TITLE .. L.ENABLE)
+local function RegisterAutoQuestsEvents()
+    L.PrintStatus()
 
     local frame = CreateFrame("Frame")
     frame:RegisterEvent("GOSSIP_SHOW")
@@ -146,24 +190,29 @@ SlashCmdList["AUTOQUEST"] = function(msg)
     local exec = msg:match("^(%S*)") -- Extraire la première partie de la commande
 
     if exec == "on" then
-        L.status = true
-        printMessage(L.TITLE .. L.ENABLE)
+        L.SetEnabled(true)
     elseif exec == "off" then
-        L.status = false
-        printMessage(L.TITLE .. L.DISABLE)
+        L.SetEnabled(false)
+    elseif exec == "config" or exec == "options" then
+        L.OpenOptions()
     else
-        local statusMessage = L.status and L.ENABLE or L.DISABLE
+        local statusMessage = L.db.enabled and L.ENABLE or L.DISABLE
         printMessage(L.TITLE .. L.STATE .. statusMessage)
     end
 end
 
 --[[
-    Gestionnaire de l'événement de connexion du joueur
+    Gestionnaire des événements de chargement de l'addon et de connexion du joueur
 ]]
-loginFrame = CreateFrame("Frame")
+local loginFrame = CreateFrame("Frame")
+loginFrame:RegisterEvent("ADDON_LOADED")
 loginFrame:RegisterEvent("PLAYER_LOGIN")
-loginFrame:SetScript("OnEvent", function(self, event)
-    if event == "PLAYER_LOGIN" then
+loginFrame:SetScript("OnEvent", function(self, event, addonName)
+    if event == "ADDON_LOADED" and addonName == ADDON_NAME then
+        InitDB()
+        L.InitOptions()
+        self:UnregisterEvent("ADDON_LOADED")
+    elseif event == "PLAYER_LOGIN" then
         RegisterAutoQuestsEvents()
     end
 end)
