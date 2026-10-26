@@ -35,6 +35,9 @@
 | `/autoquest` or `/aq` | Show AutoQuests status |
 | `/autoquest on` or `/aq on` | Reactivate AutoQuests |
 | `/autoquest off` or `/aq off` | Deactivate AutoQuests |
+| `/autoquest config` or `/aq config` | Open the options panel |
+
+You can also enable or disable AutoQuests from **Options → AddOns → AutoQuests**. Your choice is saved between sessions.
 
 > **Tip:** hold **Shift**, **Ctrl** or **Alt** to temporarily deactivate AutoQuests. It is reactivated on release.
 
