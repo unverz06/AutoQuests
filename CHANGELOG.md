@@ -4,6 +4,12 @@
 ## x.x.x
 
 > Released
+## 3.1.0
+- Add an options panel (Options > AddOns > AutoQuests) to enable/disable AutoQuests
+- Settings are now saved between sessions (SavedVariables)
+- Add `/aq config` to open the options panel
+- Internal: functions are no longer global
+
 ## 3.0.2
 - Fix Category Quests addon interface
 
