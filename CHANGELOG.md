@@ -4,6 +4,12 @@
 ## x.x.x
 
 > Released
+## 3.2.0
+- Fix conflict with Blizzard's quest dialog: auto-accept quests are now acknowledged with `AcknowledgeAutoAcceptQuest()` like the game's Accept button (no more stuck quest window / repeated quest popup)
+- PvP quests and quests that cost money are no longer accepted/completed silently: the game's confirmation popup is left to the player
+- Add a Quest GPS (on by default): an arrow and the distance to the objective of the quest tracked in the quest tracker, with meters / feet / yards, movable frame, lock and size options, an option to hide the game's own distance marker, a smooth arrow, and a green check that fades in on arrival (then the GPS fades out after 5 seconds)
+- Add `/aq gps [on|off|lock|unlock|reset]`
+
 ## 3.1.0
 - Add an options panel (Options > AddOns > AutoQuests) to enable/disable AutoQuests
 - Settings are now saved between sessions (SavedVariables)
