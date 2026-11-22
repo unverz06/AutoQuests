@@ -23,6 +23,7 @@
 # Main app
 main.lua
 options.lua
+gps.lua
 
 # Locale
 locale/default.lua
