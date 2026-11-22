@@ -6,20 +6,29 @@ local ADDON_NAME, L = ...
 local playerName = UnitName("player")
 local defaultRewardIndex = 1
 
-local HandleGossipShow, HandleQuestGreeting, HandleQuestCompletion
+local HandleGossipShow, HandleQuestGreeting, HandleQuestDetail, HandleQuestCompletion
 
 --[[
     Réglages par défaut (fusionnés avec AutoQuestsDB au chargement)
 ]]
 L.defaults = {
     enabled = true,
-    gps = false,
+    gps = true,
+    gpsUnit = "auto",
+    gpsLocked = true,
+    gpsScale = 1,
+    gpsHideNative = true,
 }
 
 --[[
     Fonction d'affichage de message
 ]]
 local function printMessage(message)
+    -- Le préfixe "AutoQuests — " est en blanc, le reste du message garde la couleur jaune habituelle
+    local title = L.TITLE
+    if title and message:sub(1, #title) == title then
+        message = "|cffffffff" .. title .. "|r" .. message:sub(#title + 1)
+    end
     DEFAULT_CHAT_FRAME:AddMessage(message, 1.0, 1.0, 0.0)
 end
 L.printMessage = printMessage
@@ -71,7 +80,7 @@ local function AutoQuestsHandler(self, event, ...)
     elseif event == "QUEST_GREETING" then
         HandleQuestGreeting()
     elseif event == "QUEST_DETAIL" then
-        AcceptQuest()
+        HandleQuestDetail()
     elseif event == "QUEST_PROGRESS" then
         CompleteQuest()
     elseif event == "QUEST_COMPLETE" then
@@ -152,6 +161,24 @@ function HandleQuestGreeting()
 end
 
 --[[
+    Fonction pour gérer l'événement QUEST_DETAIL
+    Reproduit le bouton "Accepter" de Blizzard (QuestDetailAcceptButton_OnClick) :
+    - quête PvP : Blizzard affiche une confirmation, on la laisse au joueur ;
+    - quête à acceptation automatique : Blizzard appelle AcknowledgeAutoAcceptQuest()
+      (AcceptQuest() laisserait la fenêtre bloquée et relancerait la fenêtre d'alerte de quête).
+]]
+function HandleQuestDetail()
+    if QuestFlagsPVP and QuestFlagsPVP() then
+        return
+    end
+    if QuestGetAutoAccept and AcknowledgeAutoAcceptQuest and QuestGetAutoAccept() then
+        AcknowledgeAutoAcceptQuest()
+    else
+        AcceptQuest()
+    end
+end
+
+--[[
     Fonction pour gérer l'événement QUEST_COMPLETE
 ]]
 function HandleQuestCompletion()
@@ -159,6 +186,8 @@ function HandleQuestCompletion()
     if rewardCount > 1 then
         printMessage(L.TITLE .. playerName .. L.REWARD)
         PlaySound(5274, "master")
+    elseif GetQuestMoneyToGet and (GetQuestMoneyToGet() or 0) > 0 then
+        return -- Blizzard demande de confirmer la dépense (CONFIRM_COMPLETE_EXPENSIVE_QUEST)
     else
         GetQuestReward(defaultRewardIndex)
     end
@@ -195,6 +224,8 @@ SlashCmdList["AUTOQUEST"] = function(msg)
         L.SetEnabled(false)
     elseif exec == "config" or exec == "options" then
         L.OpenOptions()
+    elseif exec == "gps" then
+        L.GPS.SlashCommand(msg:match("^%S*%s*(.-)%s*$"))
     else
         local statusMessage = L.db.enabled and L.ENABLE or L.DISABLE
         printMessage(L.TITLE .. L.STATE .. statusMessage)
@@ -211,6 +242,7 @@ loginFrame:SetScript("OnEvent", function(self, event, addonName)
     if event == "ADDON_LOADED" and addonName == ADDON_NAME then
         InitDB()
         L.InitOptions()
+        L.GPS.Init()
         self:UnregisterEvent("ADDON_LOADED")
     elseif event == "PLAYER_LOGIN" then
         RegisterAutoQuestsEvents()
