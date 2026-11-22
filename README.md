@@ -36,8 +36,17 @@
 | `/autoquest on` or `/aq on` | Reactivate AutoQuests |
 | `/autoquest off` or `/aq off` | Deactivate AutoQuests |
 | `/autoquest config` or `/aq config` | Open the options panel |
+| `/aq gps` | Toggle the Quest GPS |
+| `/aq gps on` / `off` | Enable / disable the Quest GPS |
+| `/aq gps unlock` / `lock` | Unlock the GPS to drag it / lock it again |
+| `/aq gps reset` | Reset the GPS position |
+| `/aq gps test` | Play a 13 s demo of the arrival animation |
 
 You can also enable or disable AutoQuests from **Options → AddOns → AutoQuests**. Your choice is saved between sessions.
+
+## Quest GPS
+
+An optional arrow and distance pointing to the objective of the quest you are tracking (select a quest in the quest tracker to switch target). It is **on by default**; you can disable it in the options. The distance unit is automatic (yards on English US/GB clients, meters otherwise) or can be set to meters, feet or yards. When the game gives no position for the quest, nothing is shown. By default the game's own in-game navigation marker is hidden while the GPS is enabled, to avoid duplicates (untick "Hide the game's distance marker" in the options to keep it). Within 10 units (m, ft or yd) of the objective, a green check fades in and the GPS fades out after 5 seconds (when its position is locked); it comes back when you move away.
 
 > **Tip:** hold **Shift**, **Ctrl** or **Alt** to temporarily deactivate AutoQuests. It is reactivated on release.
 
@@ -58,3 +67,7 @@ You can also enable or disable AutoQuests from **Options → AddOns → AutoQues
 
 - **CurseForge** / **Wago**: also available through WowUp
 - **GitHub**: download the latest zip from the releases page
+
+## Buy a baboon for unverz06
+
+[![Buy a baboon for unverz06](https://img.shields.io/badge/Ko--fi-Buy_a_baboon_for_unverz06-FF5E5B?style=for-the-badge&logo=kofi&logoColor=white)](https://ko-fi.com/unverz06)
